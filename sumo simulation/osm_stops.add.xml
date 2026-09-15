@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-13T12:13:36.592697+05:30 by Eclipse SUMO netconvert 1.27.1
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="${SUMO_HOME}\data\typemap\osmNetconvert.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertUrbanDe.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertPedestrians.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertShips.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertBicycle.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertAerialway.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml.gz"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+        <ptline-clean-up value="true"/>
+    </output>
+
+    <projection>
+        <proj value="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <lefthand value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <edge_removal>
+        <keep-edges.by-vclass value="passenger,bus,tram,rail_urban,subway,cable_car,rail"/>
+    </edge_removal>
+
+    <junctions>
+        <junctions.join value="true"/>
+    </junctions>
+
+    <pedestrian>
+        <crossings.guess value="true"/>
+    </pedestrian>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+    <formats>
+        <osm.bike-access value="true"/>
+        <osm.sidewalks value="true"/>
+    </formats>
+
+</netconvertConfiguration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <trainStop id="-2257797444" name="Pune Junction" lane="-52881202#1_0" startPos="204.01" endPos="404.01" friendlyPos="true" lines="12128"/>
+    <trainStop id="-2257797462" name="Pune Junction" lane="-1486887945_0" startPos="405.32" endPos="605.32" friendlyPos="true" lines="11021 PSR"/>
+    <busStop id="-2259729678" name="KEM Hospital" lane="-1307654854#0_0" startPos="0.00" endPos="1.80" friendlyPos="true" lines="81 283 94"/>
+    <busStop id="-2864314858" name="Lal Mahal" lane="-53090776#0_0" startPos="48.93" endPos="63.93" friendlyPos="true" lines="81 283 94"/>
+    <busStop id="-2864314869" name="Phadke Houd" lane="-49830977#0_0" startPos="70.49" endPos="85.49" friendlyPos="true" lines="81 283 94">
+        <access lane="-218059603#1_0" pos="47.11" length="192.94" friendlyPos="1"/>
+        <access lane="-855278811_0" pos="23.22" length="75.76" friendlyPos="1"/>
+        <access lane="218059603#0_0" pos="57.70" length="196.21" friendlyPos="1"/>
+        <access lane="218059603#1_0" pos="25.22" length="188.14" friendlyPos="1"/>
+        <access lane="855278811_0" pos="106.46" length="70.88" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-2870389530" name="Appa Balwant Chowk" lane="-53090697#4_0" startPos="69.39" endPos="84.39" friendlyPos="true" lines="94">
+        <access lane="-855256855#1_0" pos="28.08" length="220.92" friendlyPos="1"/>
+        <access lane="855256855#0_0" pos="4.75" length="225.72" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-2870389537" name="Kanyashala" lane="-53090697#0_0" startPos="12.10" endPos="27.10" friendlyPos="true" lines="94">
+        <access lane="-1162738779_0" pos="0.00" length="46.78" friendlyPos="1"/>
+        <access lane="1162738779_0" pos="99.77" length="42.11" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-2870389540" name="Kesariwada" lane="-22841173#2_0" startPos="88.43" endPos="103.43" friendlyPos="true" lines="94"/>
+    <busStop id="-2870389545" name="Mati Ganapati" lane="-22972725#7_0" startPos="17.93" endPos="32.93" friendlyPos="true" lines="94"/>
+    <trainStop id="11097510270" name="Shivaji Nagar" lane="586112436#0_0" startPos="968.86" endPos="1168.86" friendlyPos="true">
+        <access lane="-1117959142_0" pos="0.00" length="162.74" friendlyPos="1"/>
+        <access lane="1117959142_0" pos="80.50" length="160.61" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="11097510272" name="Shivaji Nagar" lane="1195664032#0_0" startPos="968.28" endPos="1168.28" friendlyPos="true">
+        <access lane="-1117959142_0" pos="0.00" length="145.32" friendlyPos="1"/>
+        <access lane="-1117959143_0" pos="25.92" length="241.61" friendlyPos="1"/>
+        <access lane="1117959142_0" pos="80.50" length="142.85" friendlyPos="1"/>
+        <access lane="1117959143_0" pos="0.00" length="244.58" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="11097510273" name="District Court" lane="586112436#2_0" startPos="0.00" endPos="200.00" friendlyPos="true"/>
+    <trainStop id="11097510275" name="District Court" lane="1195664032#2_0" startPos="0.00" endPos="200.00" friendlyPos="true"/>
+    <trainStop id="11097527711" name="Ruby Hall Clinic" lane="1532296306#0_0" startPos="5637.21" endPos="5837.21" friendlyPos="true" lines="2">
+        <access lane="-206994680#2_0" pos="277.49" length="173.17" friendlyPos="1"/>
+        <access lane="206994679#0_0" pos="124.46" length="20.90" friendlyPos="1"/>
+        <access lane="206994679#4_0" pos="0.00" length="165.57" friendlyPos="1"/>
+        <access lane="817845821#1_0" pos="12.71" length="165.24" friendlyPos="1"/>
+        <access lane="817845821#2_0" pos="97.63" length="18.77" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="11097527712" name="Ruby Hall Clinic" lane="1532296308#2_0" startPos="1197.50" endPos="1397.50" friendlyPos="true" lines="2">
+        <access lane="-206994680#2_0" pos="273.50" length="168.74" friendlyPos="1"/>
+        <access lane="206994679#0_0" pos="124.09" length="13.46" friendlyPos="1"/>
+        <access lane="206994679#4_0" pos="0.00" length="165.35" friendlyPos="1"/>
+        <access lane="817845821#1_0" pos="12.71" length="166.73" friendlyPos="1"/>
+        <access lane="817845821#2_0" pos="97.96" length="26.21" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="11097527713" name="Pune Railway Station" lane="1532296306#0_0" startPos="6341.87" endPos="6541.87" friendlyPos="true" lines="2"/>
+    <trainStop id="11097527714" name="Pune Railway Station" lane="1532296308#2_0" startPos="496.87" endPos="696.87" friendlyPos="true" lines="2"/>
+    <trainStop id="11097527715" name="Mangalwar Peth" lane="1039564318#3_0" startPos="697.30" endPos="897.30" friendlyPos="true" lines="2"/>
+    <trainStop id="11097527716" name="Mangalwar Peth" lane="1532296306#1_0" startPos="5.97" endPos="205.97" friendlyPos="true" lines="2"/>
+    <trainStop id="11097527717" name="Chhatrapati Sambhaji Udyan" lane="1039564317#2_0" startPos="1311.45" endPos="1511.45" friendlyPos="true" lines="2"/>
+    <trainStop id="11097527719" name="Chhatrapati Sambhaji Udyan" lane="1039564318#1_0" startPos="1529.17" endPos="1729.17" friendlyPos="true" lines="2"/>
+    <trainStop id="11097527720" name="District Court (Aqua Line)" lane="1039564317#1_0" startPos="19.41" endPos="219.41" friendlyPos="true" lines="2"/>
+    <trainStop id="11097527721" name="District Court (Aqua Line)" lane="1039564318#2_0" startPos="57.75" endPos="257.75" friendlyPos="true" lines="2"/>
+    <trainStop id="11097527722" name="PMC Bhavan" lane="1039564317#2_0" startPos="564.36" endPos="764.36" friendlyPos="true" lines="2">
+        <access lane="-689877945_0" pos="0.00" length="195.60" friendlyPos="1"/>
+        <access lane="689877945_0" pos="58.31" length="192.47" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="11097527723" name="PMC Bhavan" lane="1039564318#1_0" startPos="2255.59" endPos="2455.59" friendlyPos="true" lines="2"/>
+    <trainStop id="11097527724" name="Deccan Gymkhana" lane="1039564318#1_0" startPos="919.73" endPos="1119.73" friendlyPos="true" lines="2"/>
+    <trainStop id="11699340647" name="Bund Garden" lane="1532296308#2_0" startPos="2321.67" endPos="2521.67" friendlyPos="true" lines="2">
+        <access lane="1370840873#2_0" pos="692.21" length="11.88" friendlyPos="1"/>
+        <access lane="171483561#6_0" pos="491.71" length="4.74" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="11699340648" name="Bund Garden" lane="1532296306#0_0" startPos="4511.85" endPos="4711.85" friendlyPos="true" lines="2">
+        <access lane="1370840873#2_0" pos="692.58" length="18.84" friendlyPos="1"/>
+        <access lane="171483561#6_0" pos="492.08" length="2.22" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="11699340650" name="Yerwada" lane="1532296308#2_0" startPos="3084.31" endPos="3284.31" friendlyPos="true" lines="2"/>
+    <trainStop id="11699340651" name="Yerwada" lane="1532296306#0_0" startPos="3753.43" endPos="3953.43" friendlyPos="true" lines="2"/>
+    <trainStop id="11699340653" name="Kalyani Nagar" lane="1532296308#2_0" startPos="5382.54" endPos="5582.54" friendlyPos="true" lines="2"/>
+    <trainStop id="11699340654" name="Kalyani Nagar" lane="1532296306#0_0" startPos="1447.16" endPos="1647.16" friendlyPos="true" lines="2"/>
+    <trainStop id="11699340656" name="Ramwadi" lane="1532296306#0_0" startPos="0.00" endPos="200.00" friendlyPos="true" lines="2"/>
+    <trainStop id="12211960101" name="महात्मा फुले मंदाई" lane="1195664032#2_0" startPos="1998.83" endPos="2198.83" friendlyPos="true">
+        <access lane="-53745074#7_0" pos="35.60" length="100.55" friendlyPos="1"/>
+        <access lane="53745074#6_0" pos="130.96" length="95.73" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="12211960102" name="महात्मा फुले मंदाई" lane="586112436#2_0" startPos="1981.01" endPos="2181.01" friendlyPos="true">
+        <access lane="-53745074#7_0" pos="42.62" length="107.87" friendlyPos="1"/>
+        <access lane="53745074#6_0" pos="122.49" length="103.03" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="12211960112" name="कसबा पेठ" lane="1195664032#2_0" startPos="917.22" endPos="1117.22" friendlyPos="true">
+        <access lane="-1117996527_0" pos="47.86" length="80.55" friendlyPos="1"/>
+        <access lane="-218881267#0_0" pos="27.43" length="107.82" friendlyPos="1"/>
+        <access lane="-855240399#1_0" pos="2.09" length="149.22" friendlyPos="1"/>
+        <access lane="1117996527_0" pos="0.00" length="77.22" friendlyPos="1"/>
+        <access lane="218881267#0_0" pos="0.00" length="104.33" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="12211960136" name="Swargate" lane="1195664032#2_0" startPos="3471.73" endPos="3671.73" friendlyPos="true"/>
+    <trainStop id="12211960138" name="Swargate" lane="586112436#5_0" startPos="718.72" endPos="918.72" friendlyPos="true"/>
+    <busStop id="1223958268" name="Nal Stop" lane="1043506201#3_0" startPos="79.83" endPos="94.83" friendlyPos="true" lines="81 283 94">
+        <access lane="-206225425#1_0" pos="0.00" length="300.21" friendlyPos="1"/>
+        <access lane="206225425#0_0" pos="49.65" length="305.01" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1455235579" name="Garware Mahavidyalay" lane="246580198#0_0" startPos="196.86" endPos="211.86" friendlyPos="true" lines="81 283 94"/>
+    <busStop id="2085669844" name="Garware Mahavidyalay" lane="246580199#4_0" startPos="102.97" endPos="117.97" friendlyPos="true" lines="81 283">
+        <access lane="1308739833_0" pos="0.00" length="180.90" friendlyPos="1"/>
+        <access lane="1308739835#0_0" pos="0.00" length="151.78" friendlyPos="1"/>
+        <access lane="23016239#0_0" pos="41.67" length="143.72" friendlyPos="1"/>
+        <access lane="660944512_0" pos="218.85" length="175.65" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2085669850" name="Deccan Corner" lane="246580195#1_0" startPos="52.67" endPos="67.67" friendlyPos="true" lines="81 283">
+        <access lane="1308739833_0" pos="0.00" length="134.00" friendlyPos="1"/>
+        <access lane="1308739835#0_0" pos="0.00" length="105.45" friendlyPos="1"/>
+        <access lane="23016239#0_0" pos="41.67" length="113.38" friendlyPos="1"/>
+        <access lane="660944512_0" pos="218.85" length="141.24" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2088125809" name="Jog Hospital" lane="108095100#4_0" startPos="13.45" endPos="28.45" friendlyPos="true" lines="81 94"/>
+    <trainStop id="2257797395" name="Pune Junction" lane="216121876#1_0" startPos="119.33" endPos="319.33" friendlyPos="true">
+        <access lane="282484457_0" pos="46.78" length="303.57" friendlyPos="1"/>
+        <access lane="817909476_0" pos="0.00" length="298.34" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="2257797414" name="Pune Junction" lane="216121857#1_0" startPos="188.79" endPos="388.79" friendlyPos="true"/>
+    <trainStop id="2257797444" name="Pune Junction" lane="661778983#3_0" startPos="113.16" endPos="313.16" friendlyPos="true" lines="12128"/>
+    <trainStop id="2257797462" name="Pune Junction" lane="1314946613#0_0" startPos="186.78" endPos="386.78" friendlyPos="true" lines="11021 PSR"/>
+    <trainStop id="2257797466" name="Pune Junction" lane="661778979#0_0" startPos="211.45" endPos="411.45" friendlyPos="true" lines="12701 12219"/>
+    <busStop id="2259729638" name="Sonya Maruti Chowk" lane="22841096#3_0" startPos="7.97" endPos="22.97" friendlyPos="true" lines="81 283">
+        <access lane="-1162394881_0" pos="0.00" length="181.40" friendlyPos="1"/>
+        <access lane="-217389448_0" pos="0.00" length="142.56" friendlyPos="1"/>
+        <access lane="1162394881_0" pos="27.13" length="180.85" friendlyPos="1"/>
+        <access lane="217389448_0" pos="49.01" length="147.05" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2266620664" name="15 August Chowk" lane="227095245#5_0" startPos="16.78" endPos="31.78" friendlyPos="true" lines="81 283">
+        <access lane="-1229604185_0" pos="0.00" length="275.58" friendlyPos="1"/>
+        <access lane="-1304299266_0" pos="0.00" length="10.31" friendlyPos="1"/>
+        <access lane="1117982802_0" pos="42.30" length="9.16" friendlyPos="1"/>
+        <access lane="1229604185_0" pos="41.90" length="272.80" friendlyPos="1"/>
+    </busStop>
+    <trainStop id="2270270792" name="Shivajinagar" lane="217725242_0" startPos="219.21" endPos="419.21" friendlyPos="true" lines="12128 PSR">
+        <access lane="-1117959142_0" pos="80.49" length="110.20" friendlyPos="1"/>
+        <access lane="-1117959146_0" pos="78.92" length="127.28" friendlyPos="1"/>
+        <access lane="1117959142_0" pos="0.00" length="105.71" friendlyPos="1"/>
+        <access lane="1117959143_0" pos="0.00" length="167.93" friendlyPos="1"/>
+        <access lane="1117959146_0" pos="0.00" length="122.68" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="2270270796" name="Shivajinagar" lane="217725240_0" startPos="387.88" endPos="587.88" friendlyPos="true" lines="12127 PSR">
+        <access lane="-1117959142_0" pos="80.49" length="119.04" friendlyPos="1"/>
+        <access lane="-1117959146_0" pos="78.92" length="141.27" friendlyPos="1"/>
+        <access lane="1117959142_0" pos="0.00" length="114.98" friendlyPos="1"/>
+        <access lane="1117959143_0" pos="0.00" length="184.64" friendlyPos="1"/>
+        <access lane="1117959146_0" pos="0.00" length="136.51" friendlyPos="1"/>
+    </trainStop>
+    <busStop id="2358247540" name="Vishrambag Wada" lane="1126664102#1_0" startPos="35.30" endPos="50.30" friendlyPos="true" lines="81 283">
+        <access lane="-217773604#2_0" pos="0.00" length="128.35" friendlyPos="1"/>
+        <access lane="-440662347#1_0" pos="54.11" length="176.17" friendlyPos="1"/>
+        <access lane="217773604#2_0" pos="232.48" length="124.74" friendlyPos="1"/>
+        <access lane="440662347#0_0" pos="0.00" length="177.86" friendlyPos="1"/>
+    </busStop>
+    <busStop id="248156037" name="Deccan Corner" lane="250116182#0_0" startPos="47.48" endPos="62.48" friendlyPos="true" lines="81 283 94">
+        <access lane="1308739833_0" pos="0.00" length="126.06" friendlyPos="1"/>
+        <access lane="1308739835#0_0" pos="0.00" length="104.89" friendlyPos="1"/>
+        <access lane="23016239#0_0" pos="41.67" length="113.13" friendlyPos="1"/>
+        <access lane="660944512_0" pos="218.85" length="133.68" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2788028603" name="More Vidyalaya" lane="211087067#1_0" startPos="9.20" endPos="24.20" friendlyPos="true" lines="81 94"/>
+    <busStop id="2788056298" name="LIC Colony" lane="158252408#0_0" startPos="431.13" endPos="446.13" friendlyPos="true" lines="81"/>
+    <busStop id="2864314826" name="Alka Talkies" lane="30876504#2_0" startPos="44.72" endPos="59.72" friendlyPos="true" lines="81 283">
+        <access lane="-53744474_0" pos="189.17" length="184.37" friendlyPos="1"/>
+        <access lane="207872405_0" pos="0.00" length="217.95" friendlyPos="1"/>
+        <access lane="53088328_0" pos="159.12" length="209.37" friendlyPos="1"/>
+        <access lane="53744474_0" pos="0.00" length="175.64" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314827" name="Alka Talkies" lane="283124023#0_0" startPos="20.11" endPos="35.11" friendlyPos="true" lines="81 283 94">
+        <access lane="-53744474_0" pos="189.17" length="219.34" friendlyPos="1"/>
+        <access lane="53744474_0" pos="0.00" length="207.83" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314829" name="Ambedkar Bhavan" lane="858792297#1_0" startPos="36.05" endPos="51.05" friendlyPos="true" lines="81 283">
+        <access lane="-1229604185_0" pos="0.00" length="150.53" friendlyPos="1"/>
+        <access lane="1229604185_0" pos="41.90" length="155.21" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314835" name="Apollo Talkies" lane="227095243#0_0" startPos="4.73" endPos="19.73" friendlyPos="true" lines="81 283 94"/>
+    <busStop id="2864314836" name="Appa Balwant Chowk (Hujurpaga)" lane="282484394#0_0" startPos="28.59" endPos="43.59" friendlyPos="true" lines="81 283">
+        <access lane="-1118220785_0" pos="29.59" length="132.65" friendlyPos="1"/>
+        <access lane="-1162366573_0" pos="0.00" length="60.88" friendlyPos="1"/>
+        <access lane="1118220785_0" pos="0.00" length="132.64" friendlyPos="1"/>
+        <access lane="1162366573_0" pos="35.12" length="59.63" friendlyPos="1"/>
+        <access lane="440662347#0_0" pos="0.00" length="152.50" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314837" name="Chitrashala" lane="30876504#5_0" startPos="120.01" endPos="135.01" friendlyPos="true" lines="81 283">
+        <access lane="-217773604#0_0" pos="118.73" length="162.05" friendlyPos="1"/>
+        <access lane="-53744474_0" pos="56.83" length="125.59" friendlyPos="1"/>
+        <access lane="217773604#0_0" pos="0.00" length="158.51" friendlyPos="1"/>
+        <access lane="53744474_0" pos="132.34" length="112.99" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314839" name="City Post" lane="22841096#7_0" startPos="12.67" endPos="27.67" friendlyPos="true" lines="81 283">
+        <access lane="-1162366612#1_0" pos="0.00" length="80.52" friendlyPos="1"/>
+        <access lane="-1162366613#1_0" pos="0.00" length="92.38" friendlyPos="1"/>
+        <access lane="-476915660_0" pos="80.19" length="142.76" friendlyPos="1"/>
+        <access lane="1162366612#0_0" pos="63.46" length="83.19" friendlyPos="1"/>
+        <access lane="1162366613#0_0" pos="104.90" length="95.67" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314840" name="Commonwealth" lane="282484427#1_0" startPos="68.01" endPos="83.01" friendlyPos="true" lines="81 283">
+        <access lane="-1162738779_0" pos="99.77" length="214.26" friendlyPos="1"/>
+        <access lane="1162738779_0" pos="0.00" length="216.35" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314842" name="Dakshinmukhi Maruti" lane="159889519#2_0" startPos="10.60" endPos="25.60" friendlyPos="true" lines="81 283">
+        <access lane="-855256855#1_0" pos="32.82" length="223.19" friendlyPos="1"/>
+        <access lane="855256855#0_0" pos="0.00" length="224.27" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314843" name="GPO" lane="53099404#0_0" startPos="77.55" endPos="92.55" friendlyPos="true" lines="81 283 94"/>
+    <busStop id="2864314847" name="Ganpati Chowk" lane="22841268#3_0" startPos="0.00" endPos="15.00" friendlyPos="true" lines="81 283">
+        <access lane="-1118220785_0" pos="0.00" length="17.42" friendlyPos="1"/>
+        <access lane="-1183305262#2_0" pos="0.00" length="48.66" friendlyPos="1"/>
+        <access lane="1118220785_0" pos="30.00" length="19.14" friendlyPos="1"/>
+        <access lane="1162366573_0" pos="0.00" length="82.43" friendlyPos="1"/>
+        <access lane="1183305262#0_0" pos="63.14" length="45.49" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314849" name="Gokhale Hall" lane="282484427#2_0" startPos="95.53" endPos="110.53" friendlyPos="true" lines="81 283">
+        <access lane="-217773604#1_0" pos="100.45" length="246.31" friendlyPos="1"/>
+        <access lane="-217773604#2_0" pos="232.48" length="300.70" friendlyPos="1"/>
+        <access lane="217773604#1_0" pos="77.68" length="241.51" friendlyPos="1"/>
+        <access lane="217773604#2_0" pos="0.00" length="296.80" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314852" name="Ideal Colony" lane="211087067#5_0" startPos="28.42" endPos="43.42" friendlyPos="true" lines="81 94"/>
+    <busStop id="2864314855" name="Zilla Parishad" lane="216506291#0_0" startPos="77.67" endPos="92.67" friendlyPos="true" lines="81 283 94">
+        <access lane="-1229604142_0" pos="17.42" length="125.66" friendlyPos="1"/>
+        <access lane="-1229604143_0" pos="42.53" length="72.53" friendlyPos="1"/>
+        <access lane="-1229604185_0" pos="41.90" length="198.76" friendlyPos="1"/>
+        <access lane="1229604142_0" pos="0.00" length="122.46" friendlyPos="1"/>
+        <access lane="1229604143_0" pos="13.98" length="65.75" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314856" name="Kasba Peth Police Chowki" lane="60991571#1_0" startPos="3.85" endPos="18.85" friendlyPos="true" lines="81 283">
+        <access lane="-1117985108#0_0" pos="81.84" length="152.41" friendlyPos="1"/>
+        <access lane="-251445163_0" pos="0.00" length="145.66" friendlyPos="1"/>
+        <access lane="1117985108#0_0" pos="0.00" length="148.29" friendlyPos="1"/>
+        <access lane="1117985108#1_0" pos="0.00" length="252.85" friendlyPos="1"/>
+        <access lane="251445163_0" pos="56.12" length="148.76" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314858" name="Lal Mahal" lane="53090776#0_0" startPos="33.67" endPos="48.67" friendlyPos="true" lines="81 283"/>
+    <busStop id="2864314863" name="More Vidyalaya" lane="211087079#3_0" startPos="55.96" endPos="70.96" friendlyPos="true" lines="81"/>
+    <busStop id="2864314864" name="Nal Stop" lane="1506511687#2_0" startPos="5.48" endPos="20.48" friendlyPos="true" lines="81 283"/>
+    <busStop id="2864314865" name="Paud Phata" lane="199252454#5_0" startPos="319.31" endPos="334.31" friendlyPos="true" lines="81"/>
+    <busStop id="2864314866" name="Paud Phata" lane="108095100#0_0" startPos="102.63" endPos="117.63" friendlyPos="true" lines="81 94"/>
+    <busStop id="2864314867" name="Petrol Pump (Karve Road)" lane="1151920241#0_0" startPos="87.24" endPos="102.24" friendlyPos="true" lines="81 283"/>
+    <busStop id="2864314868" name="Petrol Pump (Karve Road)" lane="1147910708#4_0" startPos="32.05" endPos="47.05" friendlyPos="true" lines="81 283 94"/>
+    <busStop id="2864314869" name="Phadke Houd" lane="53090776#9_0" startPos="6.89" endPos="21.89" friendlyPos="true" lines="81 283">
+        <access lane="-218059603#1_0" pos="47.11" length="192.94" friendlyPos="1"/>
+        <access lane="-855278811_0" pos="23.22" length="75.76" friendlyPos="1"/>
+        <access lane="218059603#0_0" pos="57.70" length="196.21" friendlyPos="1"/>
+        <access lane="218059603#1_0" pos="25.22" length="188.14" friendlyPos="1"/>
+        <access lane="855278811_0" pos="106.46" length="70.88" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314871" name="Pune Station Bus Stand" lane="282484457_0" startPos="17.59" endPos="32.59" friendlyPos="true" lines="81 283"/>
+    <busStop id="2864314874" name="Sadashiv Peth Houd" lane="1126664102#0_0" startPos="34.42" endPos="49.42" friendlyPos="true" lines="81 283">
+        <access lane="-217773604#1_0" pos="0.00" length="145.09" friendlyPos="1"/>
+        <access lane="-217773604#2_0" pos="190.15" length="117.36" friendlyPos="1"/>
+        <access lane="217773604#1_0" pos="178.13" length="141.25" friendlyPos="1"/>
+        <access lane="217773604#2_0" pos="42.33" length="112.56" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2864314875" name="Sadhu Vaswani Chowk" lane="22975752#1_0" startPos="19.23" endPos="34.23" friendlyPos="true"/>
+    <busStop id="2864314878" name="Sassoon Hospital" lane="216506287#0_0" startPos="65.48" endPos="80.48" friendlyPos="true" lines="81 283"/>
+    <busStop id="2864314879" name="Shaniwarwada" lane="53090145#1_0" startPos="25.19" endPos="40.19" friendlyPos="true" lines="81 283"/>
+    <busStop id="2864314886" name="Vijay Talkies" lane="282484427#7_0" startPos="4.83" endPos="19.83" friendlyPos="true" lines="81 283">
+        <access lane="-217773604#0_0" pos="118.73" length="310.61" friendlyPos="1"/>
+        <access lane="-53744474_0" pos="112.13" length="249.63" friendlyPos="1"/>
+        <access lane="217773604#0_0" pos="0.00" length="306.86" friendlyPos="1"/>
+        <access lane="53744474_0" pos="77.04" length="237.03" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2868690840" name="SNDT" lane="246580196#0_0" startPos="92.36" endPos="107.36" friendlyPos="true" lines="283"/>
+    <busStop id="2870389546" name="Nana Wada" lane="22841339#0_0" startPos="8.86" endPos="23.86" friendlyPos="true" lines="94">
+        <access lane="-1117999817#1_0" pos="0.00" length="221.95" friendlyPos="1"/>
+        <access lane="1117999817#0_0" pos="18.36" length="222.88" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2870389551" name="Vasant Talkies" lane="22841339#2_0" startPos="17.73" endPos="32.73" friendlyPos="true" lines="94">
+        <access lane="-1117999817#1_0" pos="0.00" length="78.40" friendlyPos="1"/>
+        <access lane="-476915660_0" pos="80.19" length="210.15" friendlyPos="1"/>
+        <access lane="1117999817#0_0" pos="18.36" length="80.65" friendlyPos="1"/>
+        <access lane="476915660_0" pos="0.00" length="206.04" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4415723151" name="SNDT" lane="246580196#0_0" startPos="24.76" endPos="39.76" friendlyPos="true" lines="81 94"/>
+    <trainStop id="5573156998" name="कसबा पेठ" lane="586112436#2_0" startPos="890.14" endPos="1090.14" friendlyPos="true">
+        <access lane="-1117996527_0" pos="47.86" length="103.97" friendlyPos="1"/>
+        <access lane="-218881267#0_0" pos="27.43" length="129.19" friendlyPos="1"/>
+        <access lane="-855240399#1_0" pos="5.79" length="171.52" friendlyPos="1"/>
+        <access lane="1117996527_0" pos="0.00" length="100.70" friendlyPos="1"/>
+        <access lane="218881267#0_0" pos="0.00" length="125.98" friendlyPos="1"/>
+    </trainStop>
+    <trainStop id="5573167932" name="Vanaz" lane="1039564318#0_0" startPos="0.00" endPos="200.00" friendlyPos="true" lines="2"/>
+    <trainStop id="5573167958" name="Paud Phata" lane="1039564318#0_0" startPos="1930.28" endPos="2130.28" friendlyPos="true" lines="2"/>
+    <trainStop id="5573167970" name="SNDT College" lane="1039564318#0_0" startPos="2836.39" endPos="3036.39" friendlyPos="true" lines="2"/>
+    <trainStop id="5573167974" name="Garware College" lane="1039564318#1_0" startPos="6.27" endPos="206.27" friendlyPos="true" lines="2"/>
+    <trainStop id="5573167997" name="Anandnagar" lane="1039564318#0_0" startPos="948.59" endPos="1148.59" friendlyPos="true" lines="2"/>
+    <busStop id="633121822" name="Raste Wada" lane="227095245#0_0" startPos="72.30" endPos="87.30" friendlyPos="true" lines="81 283"/>
+    <busStop id="672220644" name="Collector Kacheri" lane="22981414_0" startPos="67.37" endPos="82.37" friendlyPos="true" lines="81 283 94"/>
+    <trainStop id="7944584968" name="Deccan Gymkhana" lane="1039564317#2_0" startPos="1783.62" endPos="1983.62" friendlyPos="true" lines="2"/>
+    <trainStop id="9572608811" name="Garware College" lane="1039564317#2_0" startPos="2696.21" endPos="2896.21" friendlyPos="true" lines="2"/>
+    <trainStop id="9572650829" name="Vanaz" lane="1039564317#3_0" startPos="3755.65" endPos="3955.65" friendlyPos="true" lines="2"/>
+    <trainStop id="9572650850" name="Anandnagar" lane="1039564317#3_0" startPos="2806.49" endPos="3006.49" friendlyPos="true" lines="2"/>
+    <trainStop id="9572650877" name="Paud Phata" lane="1039564317#3_0" startPos="1830.16" endPos="2030.16" friendlyPos="true" lines="2"/>
+    <trainStop id="9572650936" name="SNDT College" lane="1039564317#3_0" startPos="917.42" endPos="1117.42" friendlyPos="true" lines="2"/>
+    <busStop id="9603810739" name="SNDT" lane="282484419#0_0" startPos="123.85" endPos="138.85" friendlyPos="true" lines="81 283"/>
+</additional>

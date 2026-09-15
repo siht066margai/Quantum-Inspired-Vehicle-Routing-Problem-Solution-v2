@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIH 2026 — Dynamic Fleet Vehicle Routing Platform</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- KaTeX for clean LaTeX mathematical rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-badge">SIH 2026</div>
+                <div class="logo-title">
+                    <h1>DYNAMIC FLEET VEHICLE ROUTING PLATFORM</h1>
+                    <span class="subtitle">Quantum-Inspired (QPSO), Quantum (QAOA) & Exact Dijkstra Dynamic VRP Engine</span>
+                </div>
+            </div>
+
+            <!-- Main App Nav Tabs -->
+            <nav class="app-nav-tabs">
+                <button id="tab-btn-operator" class="nav-tab active" data-view="operator">🚚 Operator Fleet Manager</button>
+                <button id="tab-btn-benchmark" class="nav-tab" data-view="benchmark">📊 Benchmark Hub</button>
+                <button id="tab-btn-research" class="nav-tab" data-view="research">🔬 Algorithm Research</button>
+            </nav>
+            
+            <div class="header-status">
+                <div class="status-indicator">
+                    <span id="ws-indicator" class="dot offline"></span>
+                    <span id="ws-status-text">Disconnected</span>
+                </div>
+                <div class="status-indicator">
+                    <span id="sim-indicator" class="dot stopped"></span>
+                    <span id="sim-status-text">SUMO Idle</span>
+                </div>
+                <div class="clock-badge">
+                    <span class="label">SIM TIME</span>
+                    <span id="sim-clock" class="value">0.0s</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="app-main">
+
+            <!-- ================= VIEW 1: OPERATOR FLEET MANAGER ================= -->
+            <div id="view-operator" class="view-panel active">
+                <div class="operator-layout">
+                    <!-- Map Hero Section -->
+                    <section class="map-section">
+                        <div class="map-toolbar">
+                            <div class="tool-group">
+                                <button id="btn-start" class="btn btn-success">▶ Start SUMO</button>
+                                <button id="btn-pause" class="btn btn-warning" disabled>⏸ Pause</button>
+                                <button id="btn-step" class="btn btn-secondary" disabled>⏭ Step</button>
+                                <button id="btn-stop" class="btn btn-danger" disabled>⏹ Stop</button>
+                            </div>
+
+                            <div class="tool-group">
+                                <label>Map Pickers:</label>
+                                <button id="btn-pick-origin" class="btn btn-outline btn-sm">📍 Pick Depot (O)</button>
+                                <button id="btn-pick-customer" class="btn btn-outline btn-sm">📦 Pick Customer</button>
+                                <button id="btn-reset-view" class="btn btn-outline btn-sm">🔍 Fit Network</button>
+                            </div>
+                        </div>
+
+                        <div class="map-viewport">
+                            <canvas id="traffic-map"></canvas>
+                            <div id="map-overlay" class="map-overlay">
+                                <div id="hover-info" class="hover-info">Click map to select depot/customers or inspect road traffic</div>
+                            </div>
+                        </div>
+
+                        <!-- Causal Chain Live Tracker -->
+                        <div class="causal-chain-card">
+                            <div class="card-title">DYNAMIC FLEET ROUTING CAUSAL CHAIN ENGINE</div>
+                            <div class="chain-steps">
+                                <div class="chain-step active" id="step-1">
+                                    <div class="step-num">1</div>
+                                    <div class="step-desc">SUMO Vehicle Movement</div>
+                                </div>
+                                <div class="chain-arrow">→</div>
+                                <div class="chain-step" id="step-2">
+                                    <div class="step-num">2</div>
+                                    <div class="step-desc">TraCI Speed & Traffic Extraction</div>
+                                </div>
+                                <div class="chain-arrow">→</div>
+                                <div class="chain-step" id="step-3">
+                                    <div class="step-num">3</div>
+                                    <div class="step-desc">Dynamic Weight W(t) Update</div>
+                                </div>
+                                <div class="chain-arrow">→</div>
+                                <div class="chain-step" id="step-4">
+                                    <div class="step-num">4</div>
+                                    <div class="step-desc">QPSO / QAOA Fleet Optimization</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Control & Analytics Sidebar -->
+                    <aside class="sidebar-section">
+                        <!-- Dynamic VRP Problem Instance Builder -->
+                        <div class="card planner-card">
+                            <div class="card-header">
+                                <h3>Fleet VRP Instance Builder</h3>
+                                <span id="vrp-scenario-badge" class="badge badge-info">1 Depot + 3 Orders + 2 Vehicles</span>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="origin-select">Warehouse / Depot Node (O):</label>
+                                    <select id="origin-select" class="form-control"></select>
+                                </div>
+
+                                <!-- Fleet Configuration Section -->
+                                <div class="form-section-title">🚛 Fleet Vehicles Setup</div>
+                                <div class="grid-2 gap-8">
+                                    <div class="form-group">
+                                        <label for="fleet-count-input">Number of Vehicles (X):</label>
+                                        <input type="number" id="fleet-count-input" class="form-control" value="0" min="0" max="20" placeholder="e.g. 2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vehicle-cap-input">Capacity per Vehicle (C<sub>v</sub>):</label>
+                                        <input type="number" id="vehicle-cap-input" class="form-control" value="0" min="0" max="1000" placeholder="e.g. 25">
+                                    </div>
+                                </div>
+
+                                <!-- Customer Delivery Destinations Section -->
+                                <div class="form-section-title">📦 Customer Delivery Orders (N)</div>
+                                <div id="customer-selects-container">
+                                    <!-- Populated dynamically via app.js -->
+                                </div>
+
+                                <div class="customer-actions">
+                                    <button id="btn-add-customer" class="btn btn-outline btn-sm" type="button">➕ Add Order</button>
+                                    <button id="btn-remove-customer" class="btn btn-outline btn-sm" type="button">➖ Remove Order</button>
+                                    <button id="btn-generate-orders" class="btn btn-outline btn-sm" type="button">⚡ Synthetic Orders</button>
+                                </div>
+
+                                <div class="solver-btn-group">
+                                    <button id="btn-qpso-route" class="btn btn-primary btn-block">▶ Solve with QPSO (Quantum Swarm)</button>
+                                    <button id="btn-alns-route" class="btn btn-primary btn-block" style="background: #0284c7;">▶ Solve with ALNS (Adaptive Neighborhood)</button>
+                                    <button id="btn-hgs-route" class="btn btn-primary btn-block" style="background: #7c3aed;">▶ Solve with HGS (Hybrid Genetic Search)</button>
+                                    <button id="btn-qaoa-route" class="btn btn-qaoa btn-block">▶ Solve with QAOA Quantum Solver</button>
+                                    <button id="btn-calc-route" class="btn btn-secondary btn-block">▶ Solve with Dijkstra Baseline</button>
+                                    <button id="btn-compare-route" class="btn btn-warning btn-block">⚡ Compare QPSO / QAOA / ALNS / HGS</button>
+                                    <button id="btn-open-analysis" class="btn btn-outline btn-block hidden">🔬 View Dynamic Research Proofs</button>
+                                </div>
+
+                                <div id="route-results" class="route-metrics hidden">
+                                    <div class="metric-row">
+                                        <span class="m-label">VRP Algorithm:</span>
+                                        <span id="r-status" class="m-val highlight-green">Optimal Fleet Plan</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="m-label">Snapshot Timestamp:</span>
+                                        <span id="r-timestamp" class="m-val highlight-cyan">t = 0.0 s</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="m-label">Fleet Setup (X / C<sub>v</sub>):</span>
+                                        <span id="r-fleet-setup-val" class="m-val highlight-cyan">2 Vehicles (Cap 25)</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="m-label">Total Fleet Travel Time:</span>
+                                        <span id="r-tt" class="m-val">0.0 s</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="m-label">Total Fleet Distance:</span>
+                                        <span id="r-dist" class="m-val">0.0 m</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="m-label">Average Speed:</span>
+                                        <span id="r-speed" class="m-val">0.0 m/s</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="m-label">Computation Time:</span>
+                                        <span id="r-comp" class="m-val">0.00 ms</span>
+                                    </div>
+                                </div>
+
+                                <!-- Vehicle Route Breakdown List -->
+                                <div id="fleet-routes-list" class="fleet-routes-list hidden">
+                                    <h4>Active Vehicle Routes:</h4>
+                                    <div id="fleet-routes-container"></div>
+                                </div>
+
+                                <!-- Real-Time Activity & TraCI Event Feed -->
+                                <div id="fleet-live-events-card" style="margin-top: 12px; border-top: 1px solid var(--border-color); padding-top: 10px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                        <span style="font-weight: 700; font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Live Fleet Activity Feed (SUMO/TraCI):</span>
+                                        <span id="events-count-badge" class="badge" style="background: #1e293b; color: #38bdf8; font-size: 10px;">0 Events</span>
+                                    </div>
+                                    <div id="sim-events-container" style="max-height: 140px; overflow-y: auto; font-size: 11px; background: rgba(0,0,0,0.25); border-radius: 4px; padding: 6px 8px; border: 1px solid rgba(255,255,255,0.05);">
+                                        <ul id="sim-events-list" style="list-style: none; padding: 0; margin: 0;">
+                                            <li style="color: #6b7280; font-style: italic;">No fleet events recorded yet. Start simulation and solve fleet routing to view live execution events.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Traffic Incident Injector Panel -->
+                        <div class="card incident-card">
+                            <div class="card-header">
+                                <h3>Traffic Incident Injector</h3>
+                                <span class="badge badge-warning">Block Road / Accident</span>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="incident-edge-select">Select Road Edge:</label>
+                                    <select id="incident-edge-select" class="form-control"></select>
+                                </div>
+
+                                <div class="btn-group">
+                                    <button id="btn-inject-incident" class="btn btn-warning">⚠️ Inject Accident (Block Road)</button>
+                                    <button id="btn-clear-incident" class="btn btn-secondary">✓ Clear Incident</button>
+                                </div>
+
+                                <div class="active-incidents-list">
+                                    <h4>Active Incidents:</h4>
+                                    <ul id="incidents-ul">
+                                        <li class="none-text">No active bottlenecks</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Network Metrics Card -->
+                        <div class="card metrics-card">
+                            <div class="card-header">
+                                <h3>Network Real-Time Metrics</h3>
+                            </div>
+                            <div class="card-body grid-2">
+                                <div class="metric-box">
+                                    <span class="val" id="stat-active">0</span>
+                                    <span class="lbl">Active SUMO Vehicles</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="val" id="stat-arrived">0</span>
+                                    <span class="lbl">Arrived Deliveries</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="val" id="stat-congested">0</span>
+                                    <span class="lbl">Congested Edges</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="val" id="stat-incidents">0</span>
+                                    <span class="lbl">Active Incidents</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- ================= VIEW 2: BENCHMARK HUB ================= -->
+            <div id="view-benchmark" class="view-panel">
+                <div class="benchmark-container">
+                    <header class="benchmark-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                            <div>
+                                <h2>📊 Dynamic VRP Scientific Benchmark Hub & Reproducibility Suite</h2>
+                                <p style="margin: 0; color: var(--text-secondary); font-size: 13px;">Compare Quantum-Inspired Swarm (QPSO) against Classical Metaheuristics (ALNS, HGS), Exact MIP (HiGHS Branch-and-Cut), Dijkstra Baseline, and Quantum QAOA on identical frozen SUMO snapshots G(t₀).</p>
+                            </div>
+                            <div class="benchmark-mode-toggle" style="display: flex; align-items: center; gap: 8px;">
+                                <label style="margin: 0; font-size: 12px;"><strong>Evaluation Mode:</strong></label>
+                                <select id="benchmark-mode-select" class="form-control" style="width: 220px; height: 32px; font-size: 12px;">
+                                    <option value="frozen" selected>Mode 1: Frozen Snapshot G(t₀)</option>
+                                    <option value="dynamic">Mode 2: Dynamic Live Traffic</option>
+                                </select>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- Fairness Indicator Badge Card -->
+                    <div id="benchmark-fairness-card" class="snapshot-badge-card" style="margin: 12px 0;">
+                        <span>🔒 <strong>Scientific Fairness Verification:</strong> <span id="fairness-status-text">Ready. All algorithms evaluated on identical road graph topology, edge travel times W(t₀), customer package demands, and vehicle capacities.</span></span>
+                        <span class="badge badge-success">Fairness Guaranteed</span>
+                    </div>
+
+                    <!-- Benchmark Controls Card -->
+                    <div class="benchmark-controls-card card">
+                        <div class="card-body grid-3 gap-12 align-end">
+                            <div>
+                                <label style="margin-bottom: 6px; display: block;">Algorithms to Include in Suite:</label>
+                                <div class="checkbox-group" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                    <label><input type="checkbox" value="qpso" checked> ⚡ QPSO Swarm</label>
+                                    <label><input type="checkbox" value="alns" checked> 🔄 ALNS Metaheuristic</label>
+                                    <label><input type="checkbox" value="hgs" checked> 🧬 HGS Metaheuristic</label>
+                                    <label><input type="checkbox" value="exact_mip" checked> 🎯 Exact MIP (HiGHS)</label>
+                                    <label><input type="checkbox" value="dijkstra" checked> 📏 Dijkstra Baseline</label>
+                                    <label><input type="checkbox" value="qaoa"> ⚛️ QAOA (N ≤ 4)</label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="benchmark-seeds-input" style="margin-bottom: 6px; display: block;">Multi-Seed Stochastics (Comma separated):</label>
+                                <input type="text" id="benchmark-seeds-input" class="form-control" value="42, 101, 777" placeholder="e.g. 42, 101, 777">
+                                <span style="font-size: 11px; color: var(--text-secondary); margin-top: 4px; display: block;">Aggregates Best, Worst, Mean, Median, Std Dev, Variance & Optimality Gap</span>
+                            </div>
+
+                            <div style="display: flex; gap: 8px;">
+                                <button id="btn-run-full-benchmark" class="btn btn-warning" style="flex: 1;">🚀 Run Benchmark Suite</button>
+                                <button id="btn-run-scalability" class="btn btn-outline" style="flex: 1;">📈 Scalability Sweep</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benchmark Results Section -->
+                    <div id="benchmark-results-section" class="benchmark-results-section hidden">
+                        <!-- Dual Row: Convergence Curve & Route Inspection Projection -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+                            <!-- Convergence Curve Card -->
+                            <div class="card">
+                                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <h3>Real QPSO Iteration-by-Iteration Convergence Curve f(t)</h3>
+                                    <span id="convergence-badge" class="badge badge-info">True Search Dynamics</span>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="convergence-canvas" height="200" style="width: 100%; background: #0c1222; border-radius: 6px; border: 1px solid var(--border-color);"></canvas>
+                                    <div id="convergence-legend" style="display: flex; gap: 14px; margin-top: 8px; font-size: 11px; color: var(--text-secondary);">
+                                        <span><strong style="color: #38bdf8;">━━</strong> QPSO Best Cost</span>
+                                        <span><strong style="color: #a78bfa;">━━</strong> ALNS / HGS Cost</span>
+                                        <span id="optimum-line-legend" style="display: none;"><strong style="color: #34d47a;">- - -</strong> Proven MIP Optimum (z*)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Route Inspection & Canvas Projection Card -->
+                            <div class="card">
+                                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <h3>Route Inspector & Fleet Canvas Projection</h3>
+                                    <span class="badge badge-secondary">Visual Verification</span>
+                                </div>
+                                <div class="card-body">
+                                    <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px;">
+                                        Project any benchmark fleet solution directly onto the SUMO operator canvas to inspect multi-vehicle paths and customer delivery sequences.
+                                    </p>
+                                    <div class="form-group">
+                                        <label for="inspect-solution-select">Select Solution to Project on Map:</label>
+                                        <select id="inspect-solution-select" class="form-control"></select>
+                                    </div>
+                                    <div id="inspected-solution-details" style="font-size: 11px; background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; margin-top: 6px; min-height: 50px;">
+                                        <em>Select a solution above to view route details.</em>
+                                    </div>
+                                    <button id="btn-project-solution" class="btn btn-outline btn-block btn-sm" style="margin-top: 8px;">🗺️ Project Onto Operator Canvas</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comprehensive Multi-Seed Statistical Table -->
+                        <div class="card" style="margin-top: 16px;">
+                            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3>Multi-Seed Statistical Aggregation & Optimality Analysis</h3>
+                                <span class="badge badge-info">100% Deterministic & Reproducible</span>
+                            </div>
+                            <div class="card-body" style="overflow-x: auto;">
+                                <table class="analysis-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Algorithm</th>
+                                            <th>Feasibility Rate</th>
+                                            <th>Best Cost z_min</th>
+                                            <th>Worst Cost z_max</th>
+                                            <th>Mean Cost z_mean</th>
+                                            <th>Median Cost</th>
+                                            <th>Std Dev (σ) / Var</th>
+                                            <th>Optimality Gap (%)</th>
+                                            <th>Mean Travel Time (s)</th>
+                                            <th>Mean Compute (ms)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="benchmark-stats-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Paired Wilcoxon Significance Testing Card -->
+                        <div id="wilcoxon-card" class="card" style="margin-top: 16px;">
+                            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3>Paired Wilcoxon Signed-Rank Significance Analysis (α = 0.05)</h3>
+                                <span class="badge badge-warning">Non-Parametric Statistical Rigor</span>
+                            </div>
+                            <div class="card-body" style="overflow-x: auto;">
+                                <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 10px;">
+                                    Matched-seed non-parametric Wilcoxon signed-rank test comparing solution quality across random seeds. If <em>p</em> &lt; 0.05, the performance advantage is statistically significant. If <em>p</em> &ge; 0.05, no statistically significant difference is detected under the selected benchmark methodology.
+                                </p>
+                                <table class="analysis-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Pairwise Comparison</th>
+                                            <th>Paired Seeds (n)</th>
+                                            <th>Objective Gap (%)</th>
+                                            <th>Runtime Ratio</th>
+                                            <th>Wilcoxon (W)</th>
+                                            <th>p-value</th>
+                                            <th>Significant (α=0.05)</th>
+                                            <th>Scientific Conclusion / Winner</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="wilcoxon-table-body">
+                                        <tr><td colspan="8" class="none-text">Run multi-seed benchmark suite to generate statistical significance test results.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Scalability Benchmark Results Card -->
+                        <div id="scalability-results-card" class="card hidden" style="margin-top: 16px;">
+                            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3>Scalability Matrix: Runtime & Cost Growth Across Customer Size N</h3>
+                                <span class="badge badge-secondary">N = 3 to 12 Customers</span>
+                            </div>
+                            <div class="card-body" style="overflow-x: auto;">
+                                <table class="analysis-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Customers (N)</th>
+                                            <th>Vehicles (X)</th>
+                                            <th>QPSO (ms)</th>
+                                            <th>ALNS (ms)</th>
+                                            <th>HGS (ms)</th>
+                                            <th>Exact MIP (ms)</th>
+                                            <th>Dijkstra (ms)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="scalability-table-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SQLite History Card -->
+                    <div class="card" style="margin-top: 16px;">
+                        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3>SQLite Reproducible Experiment History (experiments.db)</h3>
+                            <button id="btn-refresh-history" class="btn btn-outline btn-sm">🔄 Refresh History</button>
+                        </div>
+                        <div class="card-body" style="overflow-x: auto;">
+                            <table class="analysis-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exp ID</th>
+                                        <th>Algorithm</th>
+                                        <th>Seed</th>
+                                        <th>Orders (N)</th>
+                                        <th>Vehicles (X)</th>
+                                        <th>Total Cost</th>
+                                        <th>Travel Time (s)</th>
+                                        <th>Runtime (ms)</th>
+                                        <th>Feasible</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="experiment-history-body">
+                                    <tr><td colspan="9" class="none-text">No stored experiment history yet. Run a benchmark suite to persist results.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= VIEW 3: ALGORITHM RESEARCH & PROOFS ================= -->
+            <div id="view-research" class="view-panel">
+                <div class="research-container">
+                    <header class="analysis-header">
+                        <div>
+                            <span class="analysis-eyebrow">MULTI-ALGORITHM OPTIMIZATION RESEARCH WORKSPACE</span>
+                            <h2 id="analysis-title">QPSO vs ALNS vs HGS vs QAOA vs Dijkstra</h2>
+                            <p id="analysis-route-label" class="analysis-route-label">Dynamic SUMO Traffic Graph G(t) Snapshot Evaluation</p>
+                        </div>
+                    </header>
+
+                    <nav class="analysis-tabs" aria-label="Analysis sections">
+                        <button class="analysis-tab active" type="button" data-analysis-tab="overview">1. Comparison Overview</button>
+                        <button class="analysis-tab" type="button" data-analysis-tab="dijkstra">2. Dijkstra Baseline</button>
+                        <button class="analysis-tab" type="button" data-analysis-tab="qpso">3. QPSO Quantum Swarm</button>
+                        <button class="analysis-tab" type="button" data-analysis-tab="alns">4. ALNS Metaheuristic</button>
+                        <button class="analysis-tab" type="button" data-analysis-tab="hgs">5. HGS Metaheuristic</button>
+                        <button class="analysis-tab" type="button" data-analysis-tab="qaoa">6. QAOA Link-VRP</button>
+                        <button class="analysis-tab" type="button" data-analysis-tab="routes">7. Route Segment Evidence</button>
+                    </nav>
+
+                    <div class="analysis-content">
+                        <!-- TAB 1: 3-Way Comparison Overview -->
+                        <section class="analysis-panel active" data-analysis-panel="overview">
+                            <div id="snapshot-badge-card" class="snapshot-badge-card">
+                                <span>🔒 <strong>Snapshot Synchronized:</strong> All algorithms evaluated on identical SUMO graph state at <span id="snapshot-time-val">t = 0.0s</span></span>
+                                <span id="perms-count-badge" class="badge badge-info">Multi-Vehicle Fleet VRP</span>
+                            </div>
+
+                            <p id="a-basis" class="analysis-basis"></p>
+
+                            <div class="comparison-table-wrap">
+                                <table class="analysis-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Metric</th>
+                                            <th>Dijkstra (Baseline)</th>
+                                            <th>QAOA Link-VRP (Azfar et al.)</th>
+                                            <th>QPSO Swarm (Herrera et al.)</th>
+                                            <th>Why it matters</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Computed Customer Sequence / Routes</th>
+                                            <td id="a-d-seq">-</td>
+                                            <td id="a-q-seq">-</td>
+                                            <td id="a-qpso-seq">-</td>
+                                            <td>Evaluated Customer Order</td>
+                                        </tr>
+                                        <tr><th>Dynamic cost f(R)</th><td id="a-d-cost">-</td><td id="a-q-cost">-</td><td id="a-qpso-cost">-</td><td>Primary route objective</td></tr>
+                                        <tr><th>Travel time (s)</th><td id="a-d-time">-</td><td id="a-q-time">-</td><td id="a-qpso-time">-</td><td>Estimated time on live traffic</td></tr>
+                                        <tr><th>Distance (m)</th><td id="a-d-dist">-</td><td id="a-q-dist">-</td><td id="a-qpso-dist">-</td><td>Physical route length</td></tr>
+                                        <tr><th>Average speed (m/s)</th><td id="a-d-speed">-</td><td id="a-q-speed">-</td><td id="a-qpso-speed">-</td><td>Traffic flow velocity</td></tr>
+                                        <tr><th>Average congestion (%)</th><td id="a-d-congestion">-</td><td id="a-q-congestion">-</td><td id="a-qpso-congestion">-</td><td>Mean load across selected roads</td></tr>
+                                        <tr><th>Bottlenecks / incidents</th><td id="a-d-events">-</td><td id="a-q-events">-</td><td id="a-qpso-events">-</td><td>Road-risk evidence</td></tr>
+                                        <tr><th>Compute time (ms)</th><td id="a-d-compute">-</td><td id="a-q-compute">-</td><td id="a-qpso-compute">-</td><td>Algorithm execution latency</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!-- TAB 2: Dijkstra Working -->
+                        <section class="analysis-panel" data-analysis-panel="dijkstra">
+                            <div class="analysis-intro">
+                                <h3>Dijkstra's Algorithm Internal Working & Mathematical Proof</h3>
+                                <p>Dijkstra computes ground-truth customer visit sequence permutations and shortest physical paths on dynamic SUMO graph G(t) using priority-queue node relaxation.</p>
+                            </div>
+                            <div class="proof-card">
+                                <h4>1. Mathematical Optimization Principle & Step-by-Step Equations</h4>
+                                <div class="math-proof-steps">
+                                    <div class="math-step-card">
+                                        $$\pi^* = \arg\min_{\pi \in \Pi(N)} \left[ \sum_{k=1}^N d_{\text{path}}\left(C_{\pi(k-1)}, C_{\pi(k)}\right) \right]$$
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proof-card">
+                                <h4>2. Step-by-Step SUMO Edge Calculations Table</h4>
+                                <div class="table-wrap">
+                                    <table class="proof-table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>SUMO Road ID</th>
+                                                <th>From Junction</th>
+                                                <th>To Junction</th>
+                                                <th>Length L_e (m)</th>
+                                                <th>Speed v_e (m/s)</th>
+                                                <th>Congestion</th>
+                                                <th>Segment Time T_e (s)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="dijkstra-segments-body">
+                                            <tr><td colspan="8" class="none-text">Run algorithm to view segment calculations.</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- TAB 3: QAOA Working -->
+                        <section class="analysis-panel" data-analysis-panel="qaoa">
+                            <div class="analysis-intro">
+                                <h3>QAOA Link-Based VRP Solver Internal Working & Proofs</h3>
+                                <p>Formulated according to <strong>Azfar et al. (ACM Trans. Quantum Comput., 2025)</strong>.</p>
+                            </div>
+                            <div class="technical-grid">
+                                <article class="tech-card"><span>Execution Backend</span><strong id="q-backend">-</strong></article>
+                                <article class="tech-card"><span>Qubits / QAOA Depth</span><strong id="q-circuit-size">-</strong></article>
+                                <article class="tech-card"><span>Penalty Multiplier P</span><strong id="q-penalty-val">-</strong></article>
+                                <article class="tech-card"><span>Normalization Factor</span><strong id="q-norm-val">-</strong></article>
+                            </div>
+                            <div class="proof-card">
+                                <h4>Position Decision Variable to Qubit Mapping Table</h4>
+                                <div class="table-wrap">
+                                    <table class="proof-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Qubit Index</th>
+                                                <th>Decision Variable</th>
+                                                <th>Assigned Step</th>
+                                                <th>Target</th>
+                                                <th>Ising Term</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="qaoa-qubits-body">
+                                            <tr><td colspan="5" class="none-text">No QAOA qubit variable data.</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- TAB 4: QPSO Working -->
+                        <section class="analysis-panel" data-analysis-panel="qpso">
+                            <div class="analysis-intro">
+                                <h3>QPSO Swarm Router Internal Working & Proofs</h3>
+                                <p>Formulated according to <strong>Herrera, Coelho, Steiner (Pesquisa Operacional 35(3), 2015)</strong>.</p>
+                            </div>
+                            <div class="technical-grid">
+                                <article class="tech-card"><span>Swarm Size M</span><strong id="qpso-particles-val">-</strong></article>
+                                <article class="tech-card"><span>Max Iterations T</span><strong id="qpso-iterations-val">-</strong></article>
+                                <article class="tech-card"><span>Search Dimension D</span><strong id="qpso-dim-val">-</strong></article>
+                                <article class="tech-card"><span>Final Alpha Decay &alpha;</span><strong id="qpso-alpha-val">-</strong></article>
+                            </div>
+                            <div class="proof-card">
+                                <h4>Continuous Global Best (gbest) Vector & Rank Discretization Table</h4>
+                                <div class="table-wrap">
+                                    <table class="proof-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Dimension d</th>
+                                                <th>Candidate Node ID</th>
+                                                <th>gbest Continuous Value</th>
+                                                <th>mbest Mean Value</th>
+                                                <th>Role / Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="qpso-rank-body">
+                                            <tr><td colspan="5" class="none-text">No QPSO particle data.</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- TAB 5: Route Segment Evidence -->
+                        <section class="analysis-panel" data-analysis-panel="routes">
+                            <div class="analysis-intro">
+                                <h3>Selected Route Evidence & Traffic Bottleneck Audit</h3>
+                                <p>Inspect segment choices and traffic alerts across algorithms.</p>
+                            </div>
+                            <div class="route-evidence-grid grid-3">
+                                <article class="route-evidence-card">
+                                    <h3>Dijkstra Path Baseline</h3>
+                                    <div id="d-route-summary" class="route-summary">-</div>
+                                    <h4>Traffic Alerts on Route</h4>
+                                    <div id="d-route-alerts" class="route-alerts"></div>
+                                </article>
+                                <article class="route-evidence-card qaoa-evidence-card">
+                                    <h3>QAOA Link-VRP Path</h3>
+                                    <div id="q-route-summary" class="route-summary">-</div>
+                                    <h4>Traffic Alerts on Route</h4>
+                                    <div id="q-route-alerts" class="route-alerts"></div>
+                                </article>
+                                <article class="route-evidence-card qpso-evidence-card">
+                                    <h3>QPSO Swarm Path</h3>
+                                    <div id="qpso-route-summary" class="route-summary">-</div>
+                                    <h4>Traffic Alerts on Route</h4>
+                                    <div id="qpso-route-alerts" class="route-alerts"></div>
+                                </article>
+                            </div>
+                        </section>
+
+                        <!-- TAB 6: ALNS Working & Proofs -->
+                        <section class="analysis-panel" data-analysis-panel="alns">
+                            <div class="analysis-intro">
+                                <h3>Adaptive Large Neighborhood Search (ALNS) Mathematical Formulation</h3>
+                                <p>Classical ALNS metaheuristic implementation based on Ropke & Pisinger (2006) for Dynamic Multi-Vehicle CVRP.</p>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 16px;">
+                                <div class="card-header">
+                                    <h4>1. Algorithmic Principles & Operator Suite</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="grid-2 gap-12">
+                                        <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color);">
+                                            <h5 style="color: #38bdf8; margin-bottom: 6px;">Destroy Operators (Adaptive Removal)</h5>
+                                            <ul style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; padding-left: 18px;">
+                                                <li><strong>Random Removal:</strong> Uniformly unselects customer nodes at random to broaden exploration.</li>
+                                                <li><strong>Worst Removal:</strong> Computes exact marginal cost contribution and removes expensive stops with Shaw greediness (p=3).</li>
+                                                <li><strong>Shaw Removal:</strong> Clusters related customers using distance and package demand disparity.</li>
+                                            </ul>
+                                        </div>
+                                        <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color);">
+                                            <h5 style="color: #a78bfa; margin-bottom: 6px;">Repair Operators (Heuristic Insertion)</h5>
+                                            <ul style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; padding-left: 18px;">
+                                                <li><strong>Random Repair:</strong> Re-inserts unassigned customers into random feasible vehicle routes.</li>
+                                                <li><strong>Greedy Repair:</strong> Evaluates all feasible insertion positions across fleet vehicles and greedily selects minimum cost increase.</li>
+                                                <li><strong>Regret-2 / Regret-3 Repair:</strong> Computes regret penalty (second-best minus best insertion) to prioritize constrained stops.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-top: 14px; background: rgba(255,255,255,0.02); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color);">
+                                        <h5 style="color: #34d47a; margin-bottom: 6px;">Adaptive Weight Adjustment & Simulated Annealing Acceptance</h5>
+                                        <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                                            Weights are adapted every segment of 10 iterations using roulette wheel probabilities with decay rate λ = 0.8. Operators receive reward scores (σ₁ = 33 for new best, σ₂ = 9 for improved incumbent, σ₃ = 13 for accepted Simulated Annealing transition with cooling rate c = 0.97).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>2. ALNS Live Operator Tracking & Performance Dynamics</h4>
+                                </div>
+                                <div class="card-body" style="overflow-x: auto;">
+                                    <table class="analysis-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Operator Type</th>
+                                                <th>Operator Name</th>
+                                                <th>Current Roulette Weight</th>
+                                                <th>Times Selected</th>
+                                                <th>Score Accumulation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="alns-operators-body">
+                                            <tr><td colspan="5" class="none-text">Solve with ALNS to inspect dynamic operator weights and roulette dynamics.</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- TAB 7: HGS Working & Proofs -->
+                        <section class="analysis-panel" data-analysis-panel="hgs">
+                            <div class="analysis-intro">
+                                <h3>Hybrid Genetic Search (HGS) Mathematical Formulation</h3>
+                                <p>State-of-the-art population-based memetic metaheuristic based on Vidal et al. (2012, 2014, 2022) with Prins' DP Split, dual subpopulations, and biased fitness.</p>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 16px;">
+                                <div class="card-header">
+                                    <h4>1. Chromosome Representation & Optimal Partitioning</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="grid-2 gap-12">
+                                        <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color);">
+                                            <h5 style="color: #ec4899; margin-bottom: 6px;">Giant-Tour Chromosome & Prins' Split</h5>
+                                            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                                                Chromosomes represent a giant tour sequence without route delimiters. Optimal vehicle route partitioning is evaluated via Prins' Dynamic Programming Split algorithm in O(N · B) time, finding the globally optimal fleet allocation for any given sequence.
+                                            </p>
+                                        </div>
+                                        <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color);">
+                                            <h5 style="color: #f59e0b; margin-bottom: 6px;">Dual Subpopulations & Dynamic Penalties</h5>
+                                            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                                                Maintains two parallel subpopulations: Feasible and Infeasible. Infeasible individuals are evaluated with a capacity violation penalty parameter ω_cap, which dynamically adapts every 20 offspring to maintain feasibility within [20%, 50%].
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-top: 14px; background: rgba(255,255,255,0.02); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color);">
+                                        <h5 style="color: #38bdf8; margin-bottom: 6px;">Biased Fitness & Broken-Pairs Diversity</h5>
+                                        <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                                            To prevent premature convergence, HGS computes the broken-pairs sequence distance measuring edge disparities. Survivor selection balances solution cost rank with population diversity contribution via Biased Fitness.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>2. HGS Evolutionary Dynamics & Subpopulation Health</h4>
+                                </div>
+                                <div class="card-body" style="overflow-x: auto;">
+                                    <table class="analysis-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Subpopulation</th>
+                                                <th>Active Individuals</th>
+                                                <th>Best Solution Cost</th>
+                                                <th>Average Diversity</th>
+                                                <th>Dynamic Penalty (ω_cap)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="hgs-subpop-body">
+                                            <tr><td colspan="5" class="none-text">Solve with HGS to inspect population diversity and evolutionary split metrics.</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

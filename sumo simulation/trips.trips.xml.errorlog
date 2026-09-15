@@ -1,0 +1,20 @@
+Warning: At actuated tlLogic 'cluster_11461786870_1223955197_8062433835', linkIndex 4,5 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_2252429278_245647313_8021147790_8021147791', linkIndex 7,8,9 has no controlling detector.
+Warning: At actuated tlLogic 'joinedS_12420420707_12420420708_cluster_12420420706_12420420709_12420420710', linkIndex 6,7,8,11,12,18,19 has no controlling detector.
+Warning: At actuated tlLogic 'joinedS_2087084469_cluster_2087084470_7986850877', linkIndex 3,4,9,10,23,24 has no controlling detector.
+Warning: At actuated tlLogic 'joinedS_2252429934_2252429946_2252429955_245647725', linkIndex 4,5,7,8,16,17,22,23 has no controlling detector.
+Warning: No connection between edge '106483611' and edge '216121857#1' found.
+Warning: Vehicle '8_train_12220:0' has no valid route from edge '106483611' to stop edge '216121857#1'.
+Warning: busStop '2257797414' for vehicle '8_train_12220:0' on lane '216121857#1_0' is not downstream the current route.
+Warning: Block after insertion lane '586112436#5_0' exceeds maximum length (stopped searching after edge ':13646064210_3' (length=20245.37m).
+Warning: No connection between edge '246580196#0' and edge '108095100#0' found.
+Warning: Vehicle '13_bus_81:0' has no valid route from edge '246580196#0' to stop edge '108095100#0'.
+Warning: No connection between edge '246580196#0' and edge '108095100#0' found.
+Warning: Vehicle '17_bus_94:0' has no valid route from edge '246580196#0' to stop edge '108095100#0'.
+Warning: Teleporting vehicle '8_train_12220:0'; waited too long (wrong lane, disconnected), lane='106483611_0', time=297.00.
+Warning: Vehicle '8_train_12220:0' ends teleporting on edge '106483611', time=297.00.
+Warning: Teleporting vehicle '13_bus_81:0'; waited too long (wrong lane, disconnected), lane='246580196#0_0', time=2074.00.
+Warning: Vehicle '13_bus_81:0' ends teleporting on edge '108095100#0', time=2074.00.
+Warning: Teleporting vehicle '17_bus_94:0'; waited too long (wrong lane, disconnected), lane='246580196#0_0', time=2279.00.
+Warning: Vehicle '17_bus_94:0' ends teleporting on edge '108095100#0', time=2279.00.
+Warning: 6 total messages of type: At actuated tlLogic '%', linkIndex % has no controlling detector.

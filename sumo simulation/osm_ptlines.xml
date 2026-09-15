@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-13T12:13:36.595303+05:30 by Eclipse SUMO netconvert 1.27.1
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="${SUMO_HOME}\data\typemap\osmNetconvert.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertUrbanDe.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertPedestrians.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertShips.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertBicycle.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertAerialway.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml.gz"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+        <ptline-clean-up value="true"/>
+    </output>
+
+    <projection>
+        <proj value="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <lefthand value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <edge_removal>
+        <keep-edges.by-vclass value="passenger,bus,tram,rail_urban,subway,cable_car,rail"/>
+    </edge_removal>
+
+    <junctions>
+        <junctions.join value="true"/>
+    </junctions>
+
+    <pedestrian>
+        <crossings.guess value="true"/>
+    </pedestrian>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+    <formats>
+        <osm.bike-access value="true"/>
+        <osm.sidewalks value="true"/>
+    </formats>
+
+</netconvertConfiguration>
+-->
+
+<ptLines xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/ptlines_file.xsd">
+    <ptLine id="11218714" name="Train SuperFast Express 12702: Hyderabad → Mumbai CSMT" line="12702" type="train" vClass="rail" completeness="0.06" missingBefore="12" missingAfter="5">
+        <route edges="106483611 1486887946#0 1486887946#1 1486887951 -1314946585 216121927 -216121876#2 -216121876#1 -216121876#0 1314946584#0 1314946584#1 1314946584#2 1314946584#3 817667273 121895453#1 121895453#2 1314727577#1 217725250"/>
+        <busStop id="2257797395" name="Pune Junction"/>
+    </ptLine>
+    <ptLine id="11218836" name="Train SuperFast Express 12701: Mumbai CSMT → Hyderabad" line="12701" type="train" vClass="rail" completeness="0.06" missingBefore="4" missingAfter="12">
+        <route edges="52879752 1314727581#0 1314727581#1 22973190#1 1314946614#0 1314946614#1 817667274 661778979#0 -216121946#1 -216121946#0 -1486887945"/>
+        <busStop id="2257797466" name="Pune Junction"/>
+    </ptLine>
+    <ptLine id="13916704" name="Aqua Line: Ramwadi =&gt; Vanaz" line="2" type="subway" vClass="subway" completeness="1.00">
+        <route edges="1532296306#0 1532296306#1 1039564317#1 1039564317#2 1039564317#3"/>
+        <busStop id="11699340656" name="Ramwadi"/>
+        <busStop id="11699340654" name="Kalyani Nagar"/>
+        <busStop id="11699340651" name="Yerwada"/>
+        <busStop id="11699340648" name="Bund Garden"/>
+        <busStop id="11097527711" name="Ruby Hall Clinic"/>
+        <busStop id="11097527713" name="Pune Railway Station"/>
+        <busStop id="11097527716" name="Mangalwar Peth"/>
+        <busStop id="11097527720" name="District Court (Aqua Line)"/>
+        <busStop id="11097527722" name="PMC Bhavan"/>
+        <busStop id="11097527717" name="Chhatrapati Sambhaji Udyan"/>
+        <busStop id="7944584968" name="Deccan Gymkhana"/>
+        <busStop id="9572608811" name="Garware College"/>
+        <busStop id="9572650936" name="SNDT College"/>
+        <busStop id="9572650877" name="Paud Phata"/>
+        <busStop id="9572650850" name="Anandnagar"/>
+        <busStop id="9572650829" name="Vanaz"/>
+    </ptLine>
+    <ptLine id="13916710" name="Aqua Line: Vanaz =&gt; Ramwadi" line="2" type="subway" vClass="subway" completeness="0.94" missingAfter="1">
+        <route edges="1039564318#0 1039564318#1 1039564318#2 1039564318#3 1532296308#1 1532296308#2"/>
+        <busStop id="5573167932" name="Vanaz"/>
+        <busStop id="5573167997" name="Anandnagar"/>
+        <busStop id="5573167958" name="Paud Phata"/>
+        <busStop id="5573167970" name="SNDT College"/>
+        <busStop id="5573167974" name="Garware College"/>
+        <busStop id="11097527724" name="Deccan Gymkhana"/>
+        <busStop id="11097527719" name="Chhatrapati Sambhaji Udyan"/>
+        <busStop id="11097527723" name="PMC Bhavan"/>
+        <busStop id="11097527721" name="District Court (Aqua Line)"/>
+        <busStop id="11097527715" name="Mangalwar Peth"/>
+        <busStop id="11097527714" name="Pune Railway Station"/>
+        <busStop id="11097527712" name="Ruby Hall Clinic"/>
+        <busStop id="11699340647" name="Bund Garden"/>
+        <busStop id="11699340650" name="Yerwada"/>
+        <busStop id="11699340653" name="Kalyani Nagar"/>
+    </ptLine>
+    <ptLine id="13917122" name="Purple Line: Swargate → PCMC Bhavan" line="1" type="subway" vClass="subway" completeness="0.38" missingAfter="8">
+        <busStop id="12211960138" name="Swargate"/>
+        <busStop id="12211960102" name="महात्मा फुले मंदाई"/>
+        <busStop id="5573156998" name="कसबा पेठ"/>
+        <busStop id="11097510273" name="District Court"/>
+        <busStop id="11097510270" name="Shivaji Nagar"/>
+    </ptLine>
+    <ptLine id="13917123" name="Purple Line: PCMC Bhavan → Swargate" line="1" type="subway" vClass="subway" completeness="0.38" missingBefore="8">
+        <busStop id="11097510272" name="Shivaji Nagar"/>
+        <busStop id="11097510275" name="District Court"/>
+        <busStop id="12211960112" name="कसबा पेठ"/>
+        <busStop id="12211960101" name="महात्मा फुले मंदाई"/>
+        <busStop id="12211960136" name="Swargate"/>
+    </ptLine>
+    <ptLine id="18029245" name="Train SuperFast Express 12128: Pune → Mumbai CSMT" line="12128" type="train" vClass="rail" completeness="0.33" missingAfter="4">
+        <route edges="661778983#3 1316323069 661778986 1314727578 817667273 121895453#1 121895453#2 1314727577#1 217725242"/>
+        <busStop id="2257797444" name="Pune Junction"/>
+        <busStop id="2270270792" name="Shivajinagar"/>
+    </ptLine>
+    <ptLine id="18029246" name="Train SuperFast Express 12127: Mumbai CSMT → Pune" line="12127" type="train" vClass="rail" completeness="0.33" missingBefore="4">
+        <route edges="217725240 1314727581#0 1314727581#1 22973190#1 817667260 -661778986 -1316323069 -52881202#1"/>
+        <busStop id="2270270796" name="Shivajinagar"/>
+        <busStop id="-2257797444" name="Pune Junction"/>
+    </ptLine>
+    <ptLine id="18056245" name="Train Duronto Express 12220: Secunderabad → Mumbai LTT" line="12220" type="train" vClass="rail" completeness="0.14" missingBefore="3" missingAfter="3">
+        <route edges="106483611 1486887946#0 1486887946#1 1486887951 -1314946585 -1486887944#1 -1486887944#0 -1316254563#1 -1316254563#0 216121857#1 216121857#0 1316254562 1314727578 817667273 121895453#1 121895453#2 1314727577#1 217725250"/>
+        <busStop id="2257797414" name="Pune Junction"/>
+    </ptLine>
+    <ptLine id="18056246" name="Train Duronto Express 12219: Mumbai LTT → Secunderabad" line="12219" type="train" vClass="rail" completeness="0.17" missingBefore="3" missingAfter="2">
+        <route edges="52879752 1314727581#0 1314727581#1 22973190#1 1314946614#0 1314946614#1 817667274 661778979#0 -216121946#1 -216121946#0 -1486887945"/>
+        <busStop id="2257797466" name="Pune Junction"/>
+    </ptLine>
+    <ptLine id="20274493" name="Train 11021 Chalukya Express: Dadar → Tirunelveli" line="11021" type="train" vClass="rail" completeness="0.25" missingBefore="3">
+        <route edges="52879752 1314727581#0 1314727581#1 22973190#1 1314946614#0 1314946614#1 1316323070 1314946613#0 216122027#0 216122027#1 1486887944#0 1486887944#1 1486887950 216121852#0 216121852#1 216122195"/>
+        <busStop id="2257797462" name="Pune Junction"/>
+    </ptLine>
+    <ptLine id="2309678" name="Pune Suburban Railway: Pune → Lonavala" line="PSR" type="train" vClass="rail" completeness="0.12" missingAfter="15">
+        <route edges="-1486887945 -817667275 1316323069 661778986 1314727578 817667273 121895453#1 121895453#2 1314727577#1 217725242"/>
+        <busStop id="-2257797462" name="Pune Junction"/>
+        <busStop id="2270270792" name="Shivajinagar"/>
+    </ptLine>
+    <ptLine id="2309707" name="Pune Suburban Railway: Lonavala → Pune" line="PSR" type="train" vClass="rail" completeness="0.12" missingBefore="15">
+        <route edges="217725240 1314727581#0 1314727581#1 22973190#1 1314946614#0 1314946614#1 1316323070 1314946613#0"/>
+        <busStop id="2270270796" name="Shivajinagar"/>
+        <busStop id="2257797462" name="Pune Junction"/>
+    </ptLine>
+    <ptLine id="3749749" name="Bus 81 : Pune Station =&gt; Kumbare Park" line="81" type="bus" vClass="bus" completeness="0.55" missingAfter="16">
+        <route edges="817845817 1205404962#1 282484457 53099404#0 53099404#6 22981414 1162338929#0 1512355094 216506291#0 216506291#2 -1307654854#6 -1307654854#5 -1307654854#4 -1307654854#2 -1307654854#1 -1307654854#0 858792297#0 858792297#1 858792297#3 1333175106 1333175105 -227095252#1 227095263#0 53091983#0 53091983#2 53091983#3 53091983#5 53091983#6 297855412 227095243#0 227095243#1 227095243#2 227095243#3 -216582076#0 -53091973 -282484405 282484408#0 282484408#2 282484408#4 22841096#0 22841096#1 22841096#2 22841096#3 22841096#6 22841096#7 22841268#0 22841268#2 22841268#3 22841268#5 282484427#0 282484427#1 282484427#2 282484427#4 282484427#5 282484427#6 282484427#7 283124023#0 283124023#3 207872406#0 207872405 207872407 207872408#0 207872397#0 250116182#0 246580198#0 1147910705#0 1147910708#2 1147910708#4 1147910708#6 246580200#0 1043506201#0 1043506201#3 250116179#0 1464087872#0 1043506203#1 1043506203#3 1043506203#4 246580196#0 246580196#2 246580196#3 108095100#0 108095100#2 108095100#3 108095100#4 108095100#5 108095100#6 108095100#7 199252453#1 199252453#2 211087067#1 211087067#2 211087067#4 211087067#5"/>
+        <busStop id="2864314871" name="Pune Station Bus Stand"/>
+        <busStop id="2864314875" name="Sadhu Vaswani Chowk"/>
+        <busStop id="2864314843" name="GPO"/>
+        <busStop id="672220644" name="Collector Kacheri"/>
+        <busStop id="2864314855" name="Zilla Parishad"/>
+        <busStop id="-2259729678" name="KEM Hospital"/>
+        <busStop id="2864314835" name="Apollo Talkies"/>
+        <busStop id="2259729638" name="Sonya Maruti Chowk"/>
+        <busStop id="2864314839" name="City Post"/>
+        <busStop id="2864314847" name="Ganpati Chowk"/>
+        <busStop id="2864314840" name="Commonwealth"/>
+        <busStop id="2864314849" name="Gokhale Hall"/>
+        <busStop id="2864314886" name="Vijay Talkies"/>
+        <busStop id="2864314827" name="Alka Talkies"/>
+        <busStop id="248156037" name="Deccan Corner"/>
+        <busStop id="1455235579" name="Garware Mahavidyalay"/>
+        <busStop id="2864314868" name="Petrol Pump (Karve Road)"/>
+        <busStop id="1223958268" name="Nal Stop"/>
+        <busStop id="4415723151" name="SNDT"/>
+        <busStop id="2864314866" name="Paud Phata"/>
+        <busStop id="2088125809" name="Jog Hospital"/>
+        <busStop id="2788028603" name="More Vidyalaya"/>
+        <busStop id="2864314852" name="Ideal Colony"/>
+    </ptLine>
+    <ptLine id="3749750" name="Bus 81: Kumbare Park =&gt; Pune Station" line="81" type="bus" vClass="bus" completeness="0.53" missingBefore="11">
+        <route edges="158252408#0 158252408#2 211087079#1 211087079#2 211087079#3 199252454#1 199252454#2 199252454#5 823696187#0 823696187#2 282484419#0 1043506202#0 1043506202#2 246580201#0 1043506204 1506511687#2 1506511687#4 250116186#0 1151920241#0 246580203#1 246580203#2 246580203#3 246580203#4 246580203#5 1147910706#0 246580199#2 246580199#4 246580195#1 250116188#0 250116188#2 311629553#0 53088328 22840906#0 30876504#0 30876504#2 30876504#4 30876504#5 30876504#6 1164045942#0 1164045942#1 1126664102#0 1126664102#1 1126664102#3 227095232#0 227095232#1 282484394#0 282484394#3 159889519#0 159889519#1 159889519#2 159889519#4 53090145#0 53090145#1 53090145#2 121897351#0 60991571#0 60991571#1 60991571#4 60991571#5 60991571#6 53090776#0 53090776#1 53090776#2 53090776#3 53090776#4 53090776#6 53090776#7 53090776#8 53090776#9 49830977#1 49830977#2 282484405 53091973 216582076#0 227095244#0 227095244#1 227095244#2 227095244#3 858784668 227095245#0 227095245#2 227095245#3 227095245#5 227095245#6 227095245#8 1092344588#0 1307654854#0 1307654854#1 1307654854#2 1307654854#3 1307654854#5 1307654854#6 858792297#0 858792297#1 858792297#3 1333175106 1333175105 1118809152#0 1118809152#1 61969580#0 216506287#0 216506287#1 282484457"/>
+        <busStop id="2788056298" name="LIC Colony"/>
+        <busStop id="2864314863" name="More Vidyalaya"/>
+        <busStop id="2864314865" name="Paud Phata"/>
+        <busStop id="9603810739" name="SNDT"/>
+        <busStop id="2864314864" name="Nal Stop"/>
+        <busStop id="2864314867" name="Petrol Pump (Karve Road)"/>
+        <busStop id="2085669844" name="Garware Mahavidyalay"/>
+        <busStop id="2085669850" name="Deccan Corner"/>
+        <busStop id="2864314826" name="Alka Talkies"/>
+        <busStop id="2864314837" name="Chitrashala"/>
+        <busStop id="2864314874" name="Sadashiv Peth Houd"/>
+        <busStop id="2358247540" name="Vishrambag Wada"/>
+        <busStop id="2864314836" name="Appa Balwant Chowk (Hujurpaga)"/>
+        <busStop id="2864314842" name="Dakshinmukhi Maruti"/>
+        <busStop id="2864314879" name="Shaniwarwada"/>
+        <busStop id="2864314856" name="Kasba Peth Police Chowki"/>
+        <busStop id="2864314858" name="Lal Mahal"/>
+        <busStop id="2864314869" name="Phadke Houd"/>
+        <busStop id="633121822" name="Raste Wada"/>
+        <busStop id="2266620664" name="15 August Chowk"/>
+        <busStop id="2864314829" name="Ambedkar Bhavan"/>
+        <busStop id="2864314878" name="Sassoon Hospital"/>
+        <busStop id="2864314871" name="Pune Station Bus Stand"/>
+    </ptLine>
+    <ptLine id="3755944" name="Bus 283 : Pune Station =&gt; Kumbare Park" line="283" type="bus" vClass="bus" completeness="0.58" missingAfter="11">
+        <route edges="282484415 282484409 817845817 1205404962#1 53099404#0 53099404#6 22981414 1162338929#0 1512355094 216506291#0 216506291#2 -1307654854#6 -1307654854#5 -1307654854#4 -1307654854#2 -1307654854#1 -1307654854#0 858792297#0 858792297#1 858792297#3 1333175106 1333175105 -227095252#1 227095263#0 53091983#0 53091983#2 53091983#3 53091983#5 53091983#6 297855412 227095243#0 227095243#1 227095243#2 227095243#3 -216582076#0 -53091973 -282484405 282484408#0 282484408#2 282484408#4 22841096#0 22841096#1 22841096#2 22841096#3 22841096#6 22841096#7 22841268#0 22841268#2 22841268#3 22841268#5 282484427#0 282484427#1 282484427#2 282484427#4 282484427#5 282484427#6 282484427#7 283124023#0 283124023#3 207872406#0 207872405 207872407 207872408#0 207872397#0 250116182#0 246580198#0 1147910705#0 1147910708#2 1147910708#4 1147910708#6 246580200#0 1043506201#0 1043506201#3 250116179#0 1464087872#0 1043506203#1 1043506203#3 1043506203#4 246580196#0 246580196#2 246580196#3"/>
+        <busStop id="2864314871" name="Pune Station Bus Stand"/>
+        <busStop id="2864314875" name="Sadhu Vaswani Chowk"/>
+        <busStop id="2864314843" name="GPO"/>
+        <busStop id="672220644" name="Collector Kacheri"/>
+        <busStop id="2864314855" name="Zilla Parishad"/>
+        <busStop id="-2259729678" name="KEM Hospital"/>
+        <busStop id="2864314835" name="Apollo Talkies"/>
+        <busStop id="2259729638" name="Sonya Maruti Chowk"/>
+        <busStop id="2864314839" name="City Post"/>
+        <busStop id="2864314847" name="Ganpati Chowk"/>
+        <busStop id="2864314840" name="Commonwealth"/>
+        <busStop id="2864314849" name="Gokhale Hall"/>
+        <busStop id="2864314886" name="Vijay Talkies"/>
+        <busStop id="2864314827" name="Alka Talkies"/>
+        <busStop id="248156037" name="Deccan Corner"/>
+        <busStop id="1455235579" name="Garware Mahavidyalay"/>
+        <busStop id="2864314868" name="Petrol Pump (Karve Road)"/>
+        <busStop id="1223958268" name="Nal Stop"/>
+        <busStop id="2868690840" name="SNDT"/>
+    </ptLine>
+    <ptLine id="3755948" name="Bus 283: Kumbare Park =&gt; Pune Station" line="283" type="bus" vClass="bus" completeness="0.48" missingBefore="13">
+        <route edges="823696187#0 823696187#2 282484419#0 1043506202#0 1043506202#2 246580201#0 1043506204 1506511687#2 1506511687#4 250116186#0 1151920241#0 246580203#1 246580203#2 246580203#3 246580203#4 246580203#5 1147910706#0 246580199#2 246580199#4 246580195#1 250116188#0 250116188#2 311629553#0 53088328 22840906#0 30876504#0 30876504#2 30876504#4 30876504#5 30876504#6 1164045942#0 1164045942#1 1126664102#0 1126664102#1 1126664102#3 227095232#0 227095232#1 282484394#0 282484394#3 159889519#0 159889519#1 159889519#2 159889519#4 53090145#0 53090145#1 53090145#2 121897351#0 60991571#0 60991571#1 60991571#4 60991571#5 60991571#6 53090776#0 53090776#1 53090776#2 53090776#3 53090776#4 53090776#6 53090776#7 53090776#8 53090776#9 49830977#1 49830977#2 282484405 53091973 216582076#0 227095244#0 227095244#1 227095244#2 227095244#3 858784668 227095245#0 227095245#2 227095245#3 227095245#5 227095245#6 227095245#8 1092344588#0 1307654854#0 1307654854#1 1307654854#2 1307654854#3 1307654854#5 1307654854#6 858792297#0 858792297#1 858792297#3 1333175106 1333175105 1118809152#0 1118809152#1 61969580#0 216506287#0 216506287#1 282484457"/>
+        <busStop id="9603810739" name="SNDT"/>
+        <busStop id="2864314864" name="Nal Stop"/>
+        <busStop id="2864314867" name="Petrol Pump (Karve Road)"/>
+        <busStop id="2085669844" name="Garware Mahavidyalay"/>
+        <busStop id="2085669850" name="Deccan Corner"/>
+        <busStop id="2864314826" name="Alka Talkies"/>
+        <busStop id="2864314837" name="Chitrashala"/>
+        <busStop id="2864314874" name="Sadashiv Peth Houd"/>
+        <busStop id="2358247540" name="Vishrambag Wada"/>
+        <busStop id="2864314836" name="Appa Balwant Chowk (Hujurpaga)"/>
+        <busStop id="2864314842" name="Dakshinmukhi Maruti"/>
+        <busStop id="2864314879" name="Shaniwarwada"/>
+        <busStop id="2864314856" name="Kasba Peth Police Chowki"/>
+        <busStop id="2864314858" name="Lal Mahal"/>
+        <busStop id="2864314869" name="Phadke Houd"/>
+        <busStop id="633121822" name="Raste Wada"/>
+        <busStop id="2266620664" name="15 August Chowk"/>
+        <busStop id="2864314829" name="Ambedkar Bhavan"/>
+        <busStop id="2864314878" name="Sassoon Hospital"/>
+        <busStop id="2864314871" name="Pune Station Bus Stand"/>
+    </ptLine>
+    <ptLine id="3758341" name="Bus 94 : Pune Station =&gt; Kothrud Depot" line="94" type="bus" vClass="bus" completeness="0.60" missingAfter="13">
+        <route edges="282484415 282484409 817845817 1205404962#1 53099404#0 53099404#6 22981414 1162338929#0 1512355094 216506291#0 216506291#2 -1307654854#6 -1307654854#5 -1307654854#4 -1307654854#2 -1307654854#1 -1307654854#0 858792297#0 858792297#1 858792297#3 1333175106 1333175105 -227095252#1 227095263#0 53091983#0 53091983#2 53091983#3 53091983#5 53091983#6 297855412 227095243#0 227095243#1 227095243#2 227095243#3 -216582076#0 -53091973 -282484405 -49830977#2 -49830977#1 -49830977#0 -53090776#8 -53090776#7 -53090776#6 -53090776#4 -53090776#3 -53090776#2 -53090776#1 -53090776#0 22841339#0 22841339#1 22841339#2 22841339#4 -216582074#4 -216582074#2 -216582074#1 -53090697#4 -53090697#3 -53090697#2 -53090697#0 -22841173#2 -22972725#7 -22972725#4 -22972725#3 -22972725#1 -22972725#0 229873812 283124023#0 283124023#3 207872406#0 207872405 207872407 207872408#0 207872397#0 250116182#0 246580198#0 1147910705#0 1147910708#2 1147910708#4 1147910708#6 246580200#0 1043506201#0 1043506201#3 250116179#0 1464087872#0 1043506203#1 1043506203#3 1043506203#4 246580196#0 246580196#2 246580196#3 108095100#0 108095100#2 108095100#3 108095100#4 108095100#5 108095100#6 108095100#7 199252453#1 199252453#2 211087067#1 211087067#2 211087067#4 211087067#5"/>
+        <busStop id="2864314871" name="Pune Station Bus Stand"/>
+        <busStop id="2864314875" name="Sadhu Vaswani Chowk"/>
+        <busStop id="2864314843" name="GPO"/>
+        <busStop id="672220644" name="Collector Kacheri"/>
+        <busStop id="2864314855" name="Zilla Parishad"/>
+        <busStop id="-2259729678" name="KEM Hospital"/>
+        <busStop id="2864314835" name="Apollo Talkies"/>
+        <busStop id="-2864314869" name="Phadke Houd"/>
+        <busStop id="-2864314858" name="Lal Mahal"/>
+        <busStop id="2870389546" name="Nana Wada"/>
+        <busStop id="2870389551" name="Vasant Talkies"/>
+        <busStop id="-2870389530" name="Appa Balwant Chowk"/>
+        <busStop id="-2870389537" name="Kanyashala"/>
+        <busStop id="-2870389540" name="Kesariwada"/>
+        <busStop id="-2870389545" name="Mati Ganapati"/>
+        <busStop id="2864314827" name="Alka Talkies"/>
+        <busStop id="248156037" name="Deccan Corner"/>
+        <busStop id="1455235579" name="Garware Mahavidyalay"/>
+        <busStop id="2864314868" name="Petrol Pump (Karve Road)"/>
+        <busStop id="1223958268" name="Nal Stop"/>
+        <busStop id="4415723151" name="SNDT"/>
+        <busStop id="2864314866" name="Paud Phata"/>
+        <busStop id="2088125809" name="Jog Hospital"/>
+        <busStop id="2788028603" name="More Vidyalaya"/>
+        <busStop id="2864314852" name="Ideal Colony"/>
+    </ptLine>
+</ptLines>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-15T10:03:13.033339+05:30 by Eclipse SUMO GUI 1.27.1
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\sih_version_2\sumo simulation\osm.net.xml.gz"/>
+        <route-files value="C:\sih_version_2\sumo simulation\osm.bicycle.trips.xml,C:\sih_version_2\sumo simulation\osm.bus.trips.xml,C:\sih_version_2\sumo simulation\osm.motorcycle.trips.xml,C:\sih_version_2\sumo simulation\osm.passenger.trips.xml,C:\sih_version_2\sumo simulation\osm.pedestrian.rou.xml,C:\sih_version_2\sumo simulation\osm.rail.trips.xml,C:\sih_version_2\sumo simulation\osm.truck.trips.xml,C:\sih_version_2\sumo simulation\osm_pt.rou.xml"/>
+        <additional-files value="C:\sih_version_2\sumo simulation\osm.poly.xml.gz,C:\sih_version_2\sumo simulation\osm_stops.add.xml,C:\sih_version_2\sumo simulation\output.add.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="C:\sih_version_2\sumo simulation\tripinfos.xml"/>
+        <stop-output value="C:\sih_version_2\sumo simulation\stopinfos.xml"/>
+        <statistic-output value="C:\sih_version_2\sumo simulation\stats.xml"/>
+    </output>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+        <tls.actuated.jam-threshold value="30"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.adaptation-steps value="18"/>
+        <device.rerouting.adaptation-interval value="10"/>
+    </routing>
+
+    <report>
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="49720"/>
+    </traci_server>
+
+    <gui_only>
+        <gui-settings-file value="C:\sih_version_2\sumo simulation\osm.view.xml"/>
+        <quit-on-end value="false"/>
+        <start value="true"/>
+    </gui_only>
+
+</sumoConfiguration>
+-->
+
+<tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+    <tripinfo id="motorcycle3" depart="5.00" departLane="1531362755#6_0" departPos="2.30" departSpeed="13.89" departDelay="0.96" arrival="48.00" arrivalLane="1207654652#0_0" arrivalPos="118.13" arrivalSpeed="13.43" duration="43.00" routeLength="383.01" waitingTime="10.00" waitingCount="1" stopTime="0.00" timeLoss="16.42" rerouteNo="1" devices="tripinfo_motorcycle3 routing_motorcycle3" vType="motorcycle_motorcycle" speedFactor="1.07" vaporized=""/>
+    <tripinfo id="motorcycle5" depart="7.00" departLane="-436506462#3_0" departPos="2.30" departSpeed="13.83" departDelay="0.27" arrival="61.00" arrivalLane="436506456#1_0" arrivalPos="7.94" arrivalSpeed="12.88" duration="54.00" routeLength="570.03" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="9.63" rerouteNo="1" devices="tripinfo_motorcycle5 routing_motorcycle5" vType="motorcycle_motorcycle" speedFactor="1.00" vaporized=""/>
+</tripinfos>

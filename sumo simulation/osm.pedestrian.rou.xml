@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-13 12:16:01.783503 by Eclipse SUMO osmWebWizard.py v1_27_1+0000-7717f2379d9
+<configuration>
+    <net-file value="C:\Users\rohit\2026-09-13-12-13-00\osm.net.xml.gz"/>
+    <additional-files value="C:\Users\rohit\2026-09-13-12-13-00\osm_stops.add.xml,C:\Users\rohit\2026-09-13-12-13-00\osm_pt.rou.xml"/>
+    <output-trip-file value="C:\Users\rohit\2026-09-13-12-13-00\osm.pedestrian.trips.xml"/>
+    <route-file value="C:\Users\rohit\2026-09-13-12-13-00\osm.pedestrian.rou.xml"/>
+    <persons value="True"/>
+    <persontrip.walk-opposite-factor value="0.8"/>
+    <prefix value="ped"/>
+    <trip-attributes value="modes=&quot;public&quot;"/>
+    <vehicle-class value="pedestrian"/>
+    <fringe-factor value="1"/>
+    <seed value="46"/>
+    <end value="10800.0"/>
+    <insertion-density value="10.0"/>
+    <duarouter-weights.tls-penalty value="20"/>
+</configuration>
+-->
+
+<!-- generated on 2026-09-13T12:16:01.280402+05:30 by Eclipse SUMO duarouter 1.27.1
+<duarouterConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\rohit\2026-09-13-12-13-00\osm.net.xml.gz"/>
+        <additional-files value="C:\Users\rohit\2026-09-13-12-13-00\osm_stops.add.xml,C:\Users\rohit\2026-09-13-12-13-00\osm_pt.rou.xml"/>
+        <route-files value="C:\Users\rohit\2026-09-13-12-13-00\osm.pedestrian.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\rohit\2026-09-13-12-13-00\osm.pedestrian.rou.xml"/>
+        <alternatives-output value="NUL"/>
+    </output>
+
+    <processing>
+        <routing-threads value="6"/>
+        <weights.tls-penalty value="20"/>
+        <persontrip.walk-opposite-factor value="0.8"/>
+    </processing>
+
+    <time>
+        <begin value="0.0"/>
+        <end value="10800.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</duarouterConfiguration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="ped_pedestrian" vClass="pedestrian"/>
+    <person id="ped1" type="ped_pedestrian" depart="5.90">
+        <walk edges="1117996527 855240399#2 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.0" depart="1296.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.1" depart="1849.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <walk edges="440662347#0 440662347#3"/>
+    </person>
+    <person id="ped18" type="ped_pedestrian" depart="106.15">
+        <walk edges="-1181351267 1181351266#2 1117985108#1" busStop="2864314856"/> <!-- Kasba Peth Police Chowki -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.0" depart="1353.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -218059603#0"/>
+    </person>
+    <person id="ped26" type="ped_pedestrian" depart="153.33">
+        <walk edges="1117982791 855240399#1 855240399#2 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.0" depart="1296.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <walk edges="-1162366613#1"/>
+    </person>
+    <person id="ped38" type="ped_pedestrian" depart="224.10">
+        <walk edges="218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="248156037" intended="pt_bus_94:0.0" depart="1296.00"/> <!-- Deccan Corner -->
+        <walk edges="1308739833"/>
+    </person>
+    <person id="ped43" type="ped_pedestrian" depart="253.59">
+        <walk edges="855240399#1 -1117996527 1117996527" trainStop="12211960112"/> <!-- कसबा पेठ -->
+        <ride trainStop="12211960101" intended="pt_subway_1:1.1" depart="967.00"/> <!-- महात्मा फुले मंदाई -->
+        <walk edges="-53745074#7 -53745074#5 -53745074#3"/>
+    </person>
+    <person id="ped56" type="ped_pedestrian" depart="330.26">
+        <walk edges="-855240399#4 855240399#3"/>
+    </person>
+    <person id="ped73" type="ped_pedestrian" depart="430.52">
+        <walk edges="1117999817#0 -1117999817#1" busStop="2870389551"/> <!-- Vasant Talkies -->
+        <walk edges="476915660"/>
+    </person>
+    <person id="ped74" type="ped_pedestrian" depart="436.41">
+        <walk edges="1162738779" busStop="2864314840"/> <!-- Commonwealth -->
+        <ride busStop="2864314849" intended="pt_bus_283:0.0" depart="1406.00"/> <!-- Gokhale Hall -->
+        <walk edges="217773604#2" busStop="2358247540"/> <!-- Vishrambag Wada -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.2" depart="2300.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 855244786"/>
+    </person>
+    <person id="ped95" type="ped_pedestrian" depart="560.26">
+        <walk edges="206994680#6 -206994680#5 -206994680#2" trainStop="11097527712"/> <!-- Ruby Hall Clinic -->
+        <walk edges="206994679#0 206994679#4 206994679#6 1370840871 1298624462#0"/>
+    </person>
+    <person id="ped116" type="ped_pedestrian" depart="684.11">
+        <walk edges="1298624464 206994679#6 206994679#4 206994679#0" trainStop="11097527712"/> <!-- Ruby Hall Clinic -->
+        <walk edges="-206994680#2 -206994680#5 -206994680#6 -206994680#8 -206994680#9"/>
+    </person>
+    <person id="ped174" type="ped_pedestrian" depart="1026.16">
+        <walk edges="855278811" busStop="2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2864314829" intended="pt_bus_283:1.0" depart="1502.00"/> <!-- Ambedkar Bhavan -->
+        <walk edges="-1229604185" busStop="2864314855"/> <!-- Zilla Parishad -->
+        <walk edges="1229604142"/>
+    </person>
+    <person id="ped184" type="ped_pedestrian" depart="1085.13">
+        <walk edges="-1117996527 855240399#2 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="248156037" intended="pt_bus_94:0.1" depart="1896.00"/> <!-- Deccan Corner -->
+        <walk edges="660944512"/>
+    </person>
+    <person id="ped277" type="ped_pedestrian" depart="1633.60">
+        <walk edges="-1181351266#1 1181351266#2 1117985108#1" busStop="2864314856"/> <!-- Kasba Peth Police Chowki -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.1" depart="1953.00"/> <!-- Phadke Houd -->
+        <walk edges="855278811 -855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="-2870389537" intended="pt_bus_94:0.2" depart="2496.00"/> <!-- Kanyashala -->
+        <walk edges="1162738779 -1162738779" busStop="2864314840"/> <!-- Commonwealth -->
+        <ride busStop="2864314849" intended="pt_bus_283:0.3" depart="3206.00"/> <!-- Gokhale Hall -->
+        <walk edges="-217773604#1"/>
+    </person>
+    <person id="ped292" type="ped_pedestrian" depart="1722.06">
+        <walk edges="-53745074#5 53745074#6" trainStop="12211960102"/> <!-- महात्मा फुले मंदाई -->
+        <ride trainStop="5573156998" intended="pt_subway_1:0.3" depart="2266.00"/> <!-- कसबा पेठ -->
+        <walk edges="218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2864314829" intended="pt_bus_283:1.3" depart="3302.00"/> <!-- Ambedkar Bhavan -->
+        <walk edges="-1229604185" busStop="2864314855"/> <!-- Zilla Parishad -->
+        <walk edges="1229604142"/>
+    </person>
+    <person id="ped332" type="ped_pedestrian" depart="1957.96">
+        <walk edges="1117959143" trainStop="11097510272"/> <!-- Shivaji Nagar -->
+        <ride trainStop="12211960112" intended="pt_subway_1:1.4" depart="2610.00"/> <!-- कसबा पेठ -->
+        <walk edges="218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.4" depart="3696.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.5" depart="4249.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <walk edges="440662347#0 440662347#3"/>
+    </person>
+    <person id="ped342" type="ped_pedestrian" depart="2016.93">
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.2" depart="2449.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.3" depart="2962.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4"/>
+    </person>
+    <person id="ped362" type="ped_pedestrian" depart="2134.88">
+        <walk edges="207872405" busStop="2864314826"/> <!-- Alka Talkies -->
+        <walk edges="53744474" busStop="2864314837"/> <!-- Chitrashala -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.3" depart="2766.00"/> <!-- Phadke Houd -->
+        <walk edges="855278811 -855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.4" depart="3696.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <walk edges="-1162366613#1"/>
+    </person>
+    <person id="ped406" type="ped_pedestrian" depart="2394.37">
+        <walk edges="-53759709#0 -53759709#1 1229233859#1"/>
+    </person>
+    <person id="ped449" type="ped_pedestrian" depart="2647.96">
+        <walk edges="-440662347#4 -440662347#3 -440662347#1 440662347#0" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.3" depart="2962.00"/> <!-- Phadke Houd -->
+        <walk edges="855278811"/>
+    </person>
+    <person id="ped458" type="ped_pedestrian" depart="2701.04">
+        <walk edges="-206994680#8 -206994680#6 -206994680#5 -206994680#2" trainStop="11097527712"/> <!-- Ruby Hall Clinic -->
+        <walk edges="206994679#0 206994679#4 206994679#6 1298624464 1370840872 206994684#4 206994684#1"/>
+    </person>
+    <person id="ped463" type="ped_pedestrian" depart="2730.53">
+        <walk edges="1117982791 855240399#1 855240399#2 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.4" depart="3696.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.5" depart="4249.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1118220785"/>
+    </person>
+    <person id="ped466" type="ped_pedestrian" depart="2748.22">
+        <walk edges="440662347#0" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.3" depart="2962.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -855240399#2 -1117996527"/>
+    </person>
+    <person id="ped470" type="ped_pedestrian" depart="2771.81">
+        <walk edges="1229442748#3"/>
+    </person>
+    <person id="ped486" type="ped_pedestrian" depart="2866.17">
+        <walk edges="-1162394881" busStop="2259729638"/> <!-- Sonya Maruti Chowk -->
+        <ride busStop="2864314847" intended="pt_bus_81:0.3" depart="3058.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.4" depart="3562.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -1164098019"/>
+    </person>
+    <person id="ped495" type="ped_pedestrian" depart="2919.25">
+        <walk edges="-1229442705 1229442748#1 -1229442748#2"/>
+    </person>
+    <person id="ped497" type="ped_pedestrian" depart="2931.04">
+        <walk edges="1117982802 -1304299266"/>
+    </person>
+    <person id="ped498" type="ped_pedestrian" depart="2936.94">
+        <walk edges="1308739835#0" busStop="2085669850"/> <!-- Deccan Corner -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.4" depart="3203.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -855240399#2 1117996527"/>
+    </person>
+    <person id="ped513" type="ped_pedestrian" depart="3025.40">
+        <walk edges="1117996527 855240399#2 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="248156037" intended="pt_bus_94:0.4" depart="3696.00"/> <!-- Deccan Corner -->
+        <walk edges="660944512"/>
+    </person>
+    <person id="ped520" type="ped_pedestrian" depart="3066.68">
+        <walk edges="206994679#4 206994679#0" trainStop="11097527712"/> <!-- Ruby Hall Clinic -->
+        <ride trainStop="11699340647" intended="pt_subway_2:1.4" depart="3295.00"/> <!-- Bund Garden -->
+        <walk edges="171483561#6"/>
+    </person>
+    <person id="ped530" type="ped_pedestrian" depart="3125.66">
+        <walk edges="-217773604#1" busStop="2864314874"/> <!-- Sadashiv Peth Houd -->
+        <ride busStop="2864314829" intended="pt_bus_283:1.4" depart="3441.00"/> <!-- Ambedkar Bhavan -->
+        <walk edges="-1229604185 1229604185"/>
+    </person>
+    <person id="ped536" type="ped_pedestrian" depart="3161.04">
+        <walk edges="1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <walk edges="440662347#0 -440662347#1" busStop="2358247540"/> <!-- Vishrambag Wada -->
+        <walk edges="217773604#2 -217773604#2 -217773604#1 -217773604#0"/>
+    </person>
+    <person id="ped563" type="ped_pedestrian" depart="3320.27">
+        <walk edges="217773604#2" busStop="2358247540"/> <!-- Vishrambag Wada -->
+        <ride busStop="2864314829" intended="pt_bus_81:1.4" depart="3732.00"/> <!-- Ambedkar Bhavan -->
+        <walk edges="-1229604185" busStop="2864314855"/> <!-- Zilla Parishad -->
+        <ride busStop="2259729638" intended="pt_bus_283:0.7" depart="5108.00"/> <!-- Sonya Maruti Chowk -->
+        <walk edges="-1162394881"/>
+    </person>
+    <person id="ped579" type="ped_pedestrian" depart="3414.63">
+        <walk edges="53745074#3 -53745074#3"/>
+    </person>
+    <person id="ped646" type="ped_pedestrian" depart="3809.76">
+        <walk edges="1308739833" busStop="2085669850"/> <!-- Deccan Corner -->
+        <ride busStop="2358247540" intended="pt_bus_81:1.5" depart="4013.00"/> <!-- Vishrambag Wada -->
+        <walk edges="440662347#0 440662347#3 440662347#4"/>
+    </person>
+    <person id="ped653" type="ped_pedestrian" depart="3851.05">
+        <walk edges="-60994804#6 60994804#7 60994804#8 60994804#10 60994804#11 60994804#12 60994804#13 60994804#14"/>
+    </person>
+    <person id="ped675" type="ped_pedestrian" depart="3980.79">
+        <walk edges="-476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314840" intended="pt_bus_283:0.5" depart="4249.00"/> <!-- Commonwealth -->
+        <walk edges="1162738779"/>
+    </person>
+    <person id="ped700" type="ped_pedestrian" depart="4128.23">
+        <walk edges="1229233859#0 1229233858 -1229233826 -218059622#1"/>
+    </person>
+    <person id="ped709" type="ped_pedestrian" depart="4181.30">
+        <walk edges="817845821#2" trainStop="11097527712"/> <!-- Ruby Hall Clinic -->
+        <walk edges="-206994680#2 -206994680#5"/>
+    </person>
+    <person id="ped723" type="ped_pedestrian" depart="4263.87">
+        <walk edges="1118009190 -856618822#1 -1118009191"/>
+    </person>
+    <person id="ped736" type="ped_pedestrian" depart="4340.54">
+        <walk edges="-1117039676#0 1131514801 1117039675#1"/>
+    </person>
+    <person id="ped785" type="ped_pedestrian" depart="4629.51">
+        <walk edges="53745074#5 53745074#6" trainStop="12211960102"/> <!-- महात्मा फुले मंदाई -->
+        <ride trainStop="5573156998" intended="pt_subway_1:0.8" depart="5266.00"/> <!-- कसबा पेठ -->
+        <walk edges="218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="-2870389530" intended="pt_bus_94:0.8" depart="6096.00"/> <!-- Appa Balwant Chowk -->
+        <walk edges="-855256855#1" busStop="2864314842"/> <!-- Dakshinmukhi Maruti -->
+        <ride busStop="2864314856" intended="pt_bus_81:1.9" depart="6871.00"/> <!-- Kasba Peth Police Chowki -->
+        <walk edges="1117985108#1 1181351266#0"/>
+    </person>
+    <person id="ped801" type="ped_pedestrian" depart="4723.87">
+        <walk edges="-1229233781#1 1229233782#2 -218059590#1"/>
+    </person>
+    <person id="ped803" type="ped_pedestrian" depart="4735.67">
+        <walk edges="-218059622#1 -218059622#0"/>
+    </person>
+    <person id="ped859" type="ped_pedestrian" depart="5065.92">
+        <walk edges="855240399#3 855244786"/>
+    </person>
+    <person id="ped883" type="ped_pedestrian" depart="5207.46">
+        <walk edges="1117959144 -1117959143" trainStop="11097510272"/> <!-- Shivaji Nagar -->
+        <ride trainStop="12211960112" intended="pt_subway_1:1.9" depart="5610.00"/> <!-- कसबा पेठ -->
+        <walk edges="218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.9" depart="6696.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.10" depart="7249.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <walk edges="440662347#0 -440662347#3"/>
+    </person>
+    <person id="ped890" type="ped_pedestrian" depart="5248.75">
+        <walk edges="-1228269462 -440662347#1" busStop="2358247540"/> <!-- Vishrambag Wada -->
+        <walk edges="217773604#2 -217773604#2 -217773604#1 217773604#0"/>
+    </person>
+    <person id="ped897" type="ped_pedestrian" depart="5290.03">
+        <walk edges="-217389448" busStop="2259729638"/> <!-- Sonya Maruti Chowk -->
+        <ride busStop="2864314847" intended="pt_bus_81:0.7" depart="5458.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.8" depart="5962.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 855240399#4"/>
+    </person>
+    <person id="ped899" type="ped_pedestrian" depart="5301.82">
+        <walk edges="-53745074#5 53745074#6" trainStop="12211960102"/> <!-- महात्मा फुले मंदाई -->
+        <ride trainStop="5573156998" intended="pt_subway_1:0.9" depart="5866.00"/> <!-- कसबा पेठ -->
+        <walk edges="218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2864314829" intended="pt_bus_283:1.9" depart="6902.00"/> <!-- Ambedkar Bhavan -->
+        <walk edges="-1229604185" busStop="2864314855"/> <!-- Zilla Parishad -->
+        <ride busStop="2259729638" intended="pt_bus_283:0.11" depart="7508.00"/> <!-- Sonya Maruti Chowk -->
+        <walk edges="-1162394881"/>
+    </person>
+    <person id="ped909" type="ped_pedestrian" depart="5360.80">
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_81:0.7" depart="5519.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.8" depart="5962.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -218059603#0"/>
+    </person>
+    <person id="ped925" type="ped_pedestrian" depart="5455.16">
+        <walk edges="1117981172"/>
+    </person>
+    <person id="ped938" type="ped_pedestrian" depart="5531.82">
+        <walk edges="53759709#1 53759709#2 218059590#0 218059590#1 -1229233782#2"/>
+    </person>
+    <person id="ped941" type="ped_pedestrian" depart="5549.52">
+        <walk edges="1181351267 1181351266#2 1117985108#1" busStop="2864314856"/> <!-- Kasba Peth Police Chowki -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.8" depart="6153.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -855240399#2"/>
+    </person>
+    <person id="ped961" type="ped_pedestrian" depart="5667.47">
+        <walk edges="-855278811 -855240399#4 -855240399#3 -218881267#1 -218881267#0 218881267#0" trainStop="12211960112"/> <!-- कसबा पेठ -->
+        <ride trainStop="12211960101" intended="pt_subway_1:1.10" depart="6367.00"/> <!-- महात्मा फुले मंदाई -->
+        <walk edges="-53745074#7 -53745074#5"/>
+    </person>
+    <person id="ped981" type="ped_pedestrian" depart="5785.41">
+        <walk edges="-1118007542 1118007542"/>
+    </person>
+    <person id="ped982" type="ped_pedestrian" depart="5791.31">
+        <walk edges="-206994680#5 -206994680#2" trainStop="11097527712"/> <!-- Ruby Hall Clinic -->
+        <walk edges="206994679#0 206994679#4 206994679#6 1370840871"/>
+    </person>
+    <person id="ped986" type="ped_pedestrian" depart="5814.90">
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.8" depart="6049.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <walk edges="440662347#0"/>
+    </person>
+    <person id="ped994" type="ped_pedestrian" depart="5862.08">
+        <walk edges="207872405" busStop="2864314826"/> <!-- Alka Talkies -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.9" depart="6306.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -1164098019"/>
+    </person>
+    <person id="ped1000" type="ped_pedestrian" depart="5897.47">
+        <walk edges="1162394881" busStop="2259729638"/> <!-- Sonya Maruti Chowk -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.9" depart="6589.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.10" depart="7162.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -218881267#1 -218881267#0 218881267#0" trainStop="5573156998"/> <!-- कसबा पेठ -->
+        <ride trainStop="11097510270" intended="pt_subway_1:0.13" depart="8503.00"/> <!-- Shivaji Nagar -->
+        <walk edges="-1117959142 1117959142" trainStop="2270270792"/> <!-- Shivajinagar -->
+        <walk edges="1117959143 -1117959143"/>
+    </person>
+    <person id="ped1020" type="ped_pedestrian" depart="6015.42">
+        <walk edges="1117982791 855240399#1 855240399#2 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="-2870389530" intended="pt_bus_94:0.9" depart="6696.00"/> <!-- Appa Balwant Chowk -->
+        <walk edges="-855256855#1" busStop="2864314842"/> <!-- Dakshinmukhi Maruti -->
+        <ride busStop="2864314856" intended="pt_bus_81:1.10" depart="7471.00"/> <!-- Kasba Peth Police Chowki -->
+        <walk edges="1117985108#0"/>
+    </person>
+    <person id="ped1021" type="ped_pedestrian" depart="6021.31">
+        <walk edges="1229233780#0 1229233780#2 -218059590#0 53759709#3 -53759709#4"/>
+    </person>
+    <person id="ped1047" type="ped_pedestrian" depart="6174.65">
+        <walk edges="440662347#0" busStop="2358247540"/> <!-- Vishrambag Wada -->
+        <walk edges="217773604#2 -217773604#2 -217773604#1 -217773604#0 -53744474"/>
+    </person>
+    <person id="ped1049" type="ped_pedestrian" depart="6186.44">
+        <walk edges="1229233781#2 -1229233781#1 -1218688989"/>
+    </person>
+    <person id="ped1062" type="ped_pedestrian" depart="6263.11">
+        <walk edges="22841216#4 22841216#6 22841216#11 22841216#12 22841216#14 22841216#17"/>
+    </person>
+    <person id="ped1065" type="ped_pedestrian" depart="6280.80">
+        <walk edges="-440662347#4 -440662347#3 -440662347#1 440662347#0" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314871" intended="pt_bus_283:1.9" depart="6562.00"/> <!-- Pune Station Bus Stand -->
+        <walk edges="282484457"/>
+    </person>
+    <person id="ped1078" type="ped_pedestrian" depart="6357.47">
+        <walk edges="218059622#0 1229233826 -1229233858 1229233859#1 53759709#2 218059590#0 218059590#1 -1229233782#2 1229233782#0"/>
+    </person>
+    <person id="ped1083" type="ped_pedestrian" depart="6386.96">
+        <walk edges="1117748821 -1117748821"/>
+    </person>
+    <person id="ped1085" type="ped_pedestrian" depart="6398.75">
+        <walk edges="53759709#3 -53759709#2 1229233859#1 1229233858 -1229233826 -218059622#1"/>
+    </person>
+    <person id="ped1099" type="ped_pedestrian" depart="6481.32">
+        <walk edges="1117982791 855240399#1 855240399#2 855240399#3 855240399#4 218059603#0"/>
+    </person>
+    <person id="ped1102" type="ped_pedestrian" depart="6499.01">
+        <walk edges="-53759709#2 1229233859#1 1229233858 1117981186#0"/>
+    </person>
+    <person id="ped1106" type="ped_pedestrian" depart="6522.60">
+        <walk edges="-855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="-2870389530" intended="pt_bus_94:0.9" depart="6696.00"/> <!-- Appa Balwant Chowk -->
+        <walk edges="-855256855#1" busStop="2864314842"/> <!-- Dakshinmukhi Maruti -->
+        <ride busStop="2864314856" intended="pt_bus_81:1.10" depart="7471.00"/> <!-- Kasba Peth Police Chowki -->
+        <walk edges="1117985108#1 -1181351267"/>
+    </person>
+    <person id="ped1114" type="ped_pedestrian" depart="6569.78">
+        <walk edges="1117959143" trainStop="11097510272"/> <!-- Shivaji Nagar -->
+        <ride trainStop="12211960112" intended="pt_subway_1:1.11" depart="6810.00"/> <!-- कसबा पेठ -->
+        <walk edges="218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.11" depart="7896.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <walk edges="-1162366613#1"/>
+    </person>
+    <person id="ped1120" type="ped_pedestrian" depart="6605.16">
+        <walk edges="477069983#0 477069986#0 -477069986#1"/>
+    </person>
+    <person id="ped1140" type="ped_pedestrian" depart="6723.11">
+        <walk edges="215804390#3 1298624464 206994679#6 206994679#4 206994679#0 652398188#1"/>
+    </person>
+    <person id="ped1148" type="ped_pedestrian" depart="6770.29">
+        <walk edges="60994804#8 60994804#10 60994804#11 60994804#12"/>
+    </person>
+    <person id="ped1155" type="ped_pedestrian" depart="6811.57">
+        <walk edges="1229233780#2 -1229233781#2 1229233781#0"/>
+    </person>
+    <person id="ped1182" type="ped_pedestrian" depart="6970.81">
+        <walk edges="855240399#1 855240399#2 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.11" depart="7896.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.12" depart="8449.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <walk edges="440662347#0 1228269462"/>
+    </person>
+    <person id="ped1183" type="ped_pedestrian" depart="6976.70">
+        <walk edges="1181351266#0 1181351266#2"/>
+    </person>
+    <person id="ped1188" type="ped_pedestrian" depart="7006.19">
+        <walk edges="1229233826 -1229233858 1229233859#1 53759709#2 53759709#3 53759709#4 53759820#2 -53759820#3"/>
+    </person>
+    <person id="ped1189" type="ped_pedestrian" depart="7012.09">
+        <walk edges="60994804#11 -60994804#10 -60994804#9"/>
+    </person>
+    <person id="ped1194" type="ped_pedestrian" depart="7041.58">
+        <walk edges="1181351266#2 1117985108#1" busStop="2864314856"/> <!-- Kasba Peth Police Chowki -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.10" depart="7353.00"/> <!-- Phadke Houd -->
+        <walk edges="855278811 -855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.11" depart="7896.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.12" depart="8449.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <walk edges="440662347#0 440662347#3 -440662347#4"/>
+    </person>
+    <person id="ped1199" type="ped_pedestrian" depart="7071.06">
+        <walk edges="1229233780#0 1229233780#2 218059590#1 1229233782#3"/>
+    </person>
+    <person id="ped1209" type="ped_pedestrian" depart="7130.04">
+        <walk edges="-1181351266#1 1181351266#2 1117985108#1" busStop="2864314856"/> <!-- Kasba Peth Police Chowki -->
+        <ride busStop="2864314869" intended="pt_bus_81:1.10" depart="7595.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -218881267#1 -218881267#0 218881267#0" trainStop="5573156998"/> <!-- कसबा पेठ -->
+        <ride trainStop="11097510270" intended="pt_subway_1:0.13" depart="8503.00"/> <!-- Shivaji Nagar -->
+        <walk edges="-1117959142 1117959142" trainStop="2270270792"/> <!-- Shivajinagar -->
+        <walk edges="1117959146 -1117959146"/>
+    </person>
+    <person id="ped1238" type="ped_pedestrian" depart="7301.06">
+        <walk edges="1164098019 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="-2870389530" intended="pt_bus_94:0.11" depart="7896.00"/> <!-- Appa Balwant Chowk -->
+        <walk edges="-855256855#1" busStop="2864314842"/> <!-- Dakshinmukhi Maruti -->
+        <ride busStop="2864314856" intended="pt_bus_81:1.12" depart="8671.00"/> <!-- Kasba Peth Police Chowki -->
+        <walk edges="1117985108#0 -1117985108#0"/>
+    </person>
+    <person id="ped1239" type="ped_pedestrian" depart="7306.96">
+        <walk edges="218881267#0" trainStop="12211960112"/> <!-- कसबा पेठ -->
+        <ride trainStop="12211960101" intended="pt_subway_1:1.12" depart="7567.00"/> <!-- महात्मा फुले मंदाई -->
+        <walk edges="-53745074#7 -53745074#5 53745074#3"/>
+    </person>
+    <person id="ped1241" type="ped_pedestrian" depart="7318.76">
+        <walk edges="-53745074#7 -53745074#5 -53745074#3 -53745074#2"/>
+    </person>
+    <person id="ped1252" type="ped_pedestrian" depart="7383.63">
+        <walk edges="-440662347#3 -440662347#1 440662347#0" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <walk edges="1162366573 -1162366573 1118220785 -1118220785" busStop="2864314847"/> <!-- Ganpati Chowk -->
+        <ride busStop="2864314886" intended="pt_bus_283:0.11" depart="7919.00"/> <!-- Vijay Talkies -->
+        <walk edges="-53744474"/>
+    </person>
+    <person id="ped1254" type="ped_pedestrian" depart="7395.42">
+        <walk edges="-53745074#5 53745074#6" trainStop="12211960102"/> <!-- महात्मा फुले मंदाई -->
+        <ride trainStop="5573156998" intended="pt_subway_1:0.12" depart="7666.00"/> <!-- कसबा पेठ -->
+        <walk edges="218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2864314829" intended="pt_bus_283:1.12" depart="8702.00"/> <!-- Ambedkar Bhavan -->
+        <walk edges="-1229604185" busStop="2864314855"/> <!-- Zilla Parishad -->
+        <walk edges="1229604143"/>
+    </person>
+    <person id="ped1259" type="ped_pedestrian" depart="7424.91">
+        <walk edges="-53744474" busStop="2864314837"/> <!-- Chitrashala -->
+        <ride busStop="2864314869" intended="pt_bus_81:1.11" depart="7800.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -218881267#1 -218881267#0 218881267#0" trainStop="12211960112"/> <!-- कसबा पेठ -->
+        <ride trainStop="12211960101" intended="pt_subway_1:1.15" depart="9367.00"/> <!-- महात्मा फुले मंदाई -->
+        <walk edges="-53745074#7 -53745074#5 53745074#3"/>
+    </person>
+    <person id="ped1294" type="ped_pedestrian" depart="7631.32">
+        <walk edges="-855240399#2 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="-2870389537" intended="pt_bus_94:0.12" depart="8496.00"/> <!-- Kanyashala -->
+        <walk edges="1162738779 -1162738779" busStop="2864314840"/> <!-- Commonwealth -->
+        <ride busStop="2864314849" intended="pt_bus_283:0.13" depart="9206.00"/> <!-- Gokhale Hall -->
+        <walk edges="-217773604#2"/>
+    </person>
+    <person id="ped1311" type="ped_pedestrian" depart="7731.58">
+        <walk edges="-1228269462 -440662347#1" busStop="2358247540"/> <!-- Vishrambag Wada -->
+        <walk edges="217773604#2 -217773604#2"/>
+    </person>
+    <person id="ped1316" type="ped_pedestrian" depart="7761.07">
+        <walk edges="1162366612#0" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_81:0.11" depart="7919.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.12" depart="8362.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 218059603#0"/>
+    </person>
+    <person id="ped1323" type="ped_pedestrian" depart="7802.35">
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.12" depart="8449.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 -1162366573"/>
+    </person>
+    <person id="ped1332" type="ped_pedestrian" depart="7855.43">
+        <walk edges="218059603#1 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.12" depart="8496.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <walk edges="-1162366612#1"/>
+    </person>
+    <person id="ped1357" type="ped_pedestrian" depart="8002.86">
+        <walk edges="1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.12" depart="8362.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3"/>
+    </person>
+    <person id="ped1392" type="ped_pedestrian" depart="8209.27">
+        <walk edges="218881267#1 855240399#3 855240399#4 855278811" busStop="2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2864314829" intended="pt_bus_283:1.12" depart="8702.00"/> <!-- Ambedkar Bhavan -->
+        <walk edges="-1229604185 1229604185"/>
+    </person>
+    <person id="ped1394" type="ped_pedestrian" depart="8221.07">
+        <walk edges="206994684#0 206994684#1 206994684#4 1370840872 1298624464 206994679#6 206994679#4 206994679#0"/>
+    </person>
+    <person id="ped1399" type="ped_pedestrian" depart="8250.56">
+        <walk edges="-192603865#1 1529989260 1370840871 206994679#6 206994679#4 206994679#0" trainStop="11097527712"/> <!-- Ruby Hall Clinic -->
+        <walk edges="-206994680#2"/>
+    </person>
+    <person id="ped1423" type="ped_pedestrian" depart="8392.10">
+        <walk edges="-1181351266#1 1181351266#2 1117985108#1" busStop="2864314856"/> <!-- Kasba Peth Police Chowki -->
+        <ride busStop="2864314869" intended="pt_bus_81:1.12" depart="8795.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -855240399#2 -855240399#1 855240399#0"/>
+    </person>
+    <person id="ped1424" type="ped_pedestrian" depart="8397.99">
+        <walk edges="-1162366573 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314856" intended="pt_bus_81:1.12" depart="8604.00"/> <!-- Kasba Peth Police Chowki -->
+        <walk edges="1117985108#1 -1181351267"/>
+    </person>
+    <person id="ped1426" type="ped_pedestrian" depart="8409.79">
+        <walk edges="1229442750#1 -1229442749"/>
+    </person>
+    <person id="ped1460" type="ped_pedestrian" depart="8610.30">
+        <walk edges="-217773604#0 217773604#1" busStop="2864314874"/> <!-- Sadashiv Peth Houd -->
+        <ride busStop="2864314869" intended="pt_bus_81:1.13" depart="9074.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -218881267#1 -218881267#0 218881267#0" trainStop="5573156998"/> <!-- कसबा पेठ -->
+        <ride trainStop="11097510270" intended="pt_subway_1:0.16" depart="10303.00"/> <!-- Shivaji Nagar -->
+        <walk edges="-1117959142 1117959142" trainStop="2270270792"/> <!-- Shivajinagar -->
+        <walk edges="1117959143 -1117959145"/>
+    </person>
+    <person id="ped1461" type="ped_pedestrian" depart="8616.20">
+        <walk edges="-1162394881" busStop="2259729638"/> <!-- Sonya Maruti Chowk -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.13" depart="8989.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.14" depart="9562.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -218881267#1 -218881267#0 218881267#0" trainStop="5573156998"/> <!-- कसबा पेठ -->
+        <ride trainStop="11097510270" intended="pt_subway_1:0.17" depart="10903.00"/> <!-- Shivaji Nagar -->
+        <walk edges="-1117959142 1117959142" trainStop="2270270792"/> <!-- Shivajinagar -->
+        <walk edges="1117959143 -1117959143"/>
+    </person>
+    <person id="ped1467" type="ped_pedestrian" depart="8651.58">
+        <walk edges="817909476" trainStop="2257797395"/> <!-- Pune Junction -->
+        <walk edges="282484457" busStop="2864314871"/> <!-- Pune Station Bus Stand -->
+        <ride busStop="2864314835" intended="pt_bus_283:0.15" depart="9444.00"/> <!-- Apollo Talkies -->
+        <ride busStop="-2870389530" intended="pt_bus_94:0.15" depart="10217.00"/> <!-- Appa Balwant Chowk -->
+        <walk edges="855256855#0"/>
+    </person>
+    <person id="ped1473" type="ped_pedestrian" depart="8686.97">
+        <walk edges="855278811 -855240399#4 -855240399#3 -855240399#2 1117996527"/>
+    </person>
+    <person id="ped1495" type="ped_pedestrian" depart="8816.71">
+        <walk edges="1162366612#0" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.13" depart="9049.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.14" depart="9562.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -855240399#2 855240399#1"/>
+    </person>
+    <person id="ped1501" type="ped_pedestrian" depart="8852.10">
+        <walk edges="-1229233782#1 1229233782#2 -218059590#1 -218059590#0 -53759709#2 1229233859#1 -1229233858"/>
+    </person>
+    <person id="ped1506" type="ped_pedestrian" depart="8881.58">
+        <walk edges="53759709#2 1229233859#1 1229233858 -1229233826"/>
+    </person>
+    <person id="ped1507" type="ped_pedestrian" depart="8887.48">
+        <walk edges="-1183305262#2" busStop="2864314847"/> <!-- Ganpati Chowk -->
+        <ride busStop="2864314886" intended="pt_bus_283:0.13" depart="9119.00"/> <!-- Vijay Talkies -->
+        <walk edges="-53744474"/>
+    </person>
+    <person id="ped1531" type="ped_pedestrian" depart="9029.02">
+        <walk edges="1529989260 1298624463"/>
+    </person>
+    <person id="ped1549" type="ped_pedestrian" depart="9135.18">
+        <walk edges="-1228269461 -440662347#3 -440662347#1 440662347#0" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.14" depart="9562.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -218881267#1 -218881267#0 218881267#0" trainStop="12211960112"/> <!-- कसबा पेठ -->
+        <ride trainStop="12211960101" intended="pt_subway_1:1.17" depart="10567.00"/> <!-- महात्मा फुले मंदाई -->
+        <walk edges="-53745074#7 -53745074#5 53745074#3"/>
+    </person>
+    <person id="ped1550" type="ped_pedestrian" depart="9141.07">
+        <walk edges="-1117985108#0 1117985108#0" busStop="2864314856"/> <!-- Kasba Peth Police Chowki -->
+        <ride busStop="2864314869" intended="pt_bus_81:1.13" depart="9395.00"/> <!-- Phadke Houd -->
+        <walk edges="855278811 -855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.15" depart="10296.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <walk edges="-1162366613#1"/>
+    </person>
+    <person id="ped1560" type="ped_pedestrian" depart="9200.05">
+        <walk edges="1117985108#0" busStop="2864314856"/> <!-- Kasba Peth Police Chowki -->
+        <ride busStop="2864314869" intended="pt_bus_81:1.13" depart="9395.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811"/>
+    </person>
+    <person id="ped1573" type="ped_pedestrian" depart="9276.72">
+        <walk edges="1228269461 -440662347#3 -440662347#1 440662347#0" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.14" depart="9562.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -218881267#1"/>
+    </person>
+    <person id="ped1584" type="ped_pedestrian" depart="9341.59">
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.14" depart="9649.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.15" depart="10162.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 855240399#2"/>
+    </person>
+    <person id="ped1622" type="ped_pedestrian" depart="9565.69">
+        <walk edges="-217773604#1 217773604#2" busStop="2358247540"/> <!-- Vishrambag Wada -->
+        <ride busStop="2864314829" intended="pt_bus_283:1.15" depart="10100.00"/> <!-- Ambedkar Bhavan -->
+        <walk edges="-1229604185"/>
+    </person>
+    <person id="ped1624" type="ped_pedestrian" depart="9577.49">
+        <walk edges="-53745074#0 53745074#2 53745074#3 53745074#5 53745074#6" trainStop="12211960102"/> <!-- महात्मा फुले मंदाई -->
+        <ride trainStop="5573156998" intended="pt_subway_1:0.16" depart="10066.00"/> <!-- कसबा पेठ -->
+        <walk edges="218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2870389551" intended="pt_bus_94:0.16" depart="10896.00"/> <!-- Vasant Talkies -->
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <walk edges="-1162366613#1"/>
+    </person>
+    <person id="ped1627" type="ped_pedestrian" depart="9595.18">
+        <walk edges="1117982791 855240399#1 855240399#2 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="-2870389537" intended="pt_bus_94:0.15" depart="10296.00"/> <!-- Kanyashala -->
+        <walk edges="1162738779 -1162738779"/>
+    </person>
+    <person id="ped1629" type="ped_pedestrian" depart="9606.97">
+        <walk edges="-855256855#1" busStop="2864314842"/> <!-- Dakshinmukhi Maruti -->
+        <ride busStop="2864314829" intended="pt_bus_81:1.14" depart="9871.00"/> <!-- Ambedkar Bhavan -->
+        <walk edges="-1229604185 1229604185"/>
+    </person>
+    <person id="ped1631" type="ped_pedestrian" depart="9618.77">
+        <walk edges="-53759820#2 -53759709#4"/>
+    </person>
+    <person id="ped1636" type="ped_pedestrian" depart="9648.26">
+        <walk edges="855244786 -218881267#1 -218881267#0 218881267#0" trainStop="12211960112"/> <!-- कसबा पेठ -->
+        <ride trainStop="12211960101" intended="pt_subway_1:1.16" depart="9967.00"/> <!-- महात्मा फुले मंदाई -->
+        <walk edges="-53745074#7 -53745074#5 -118591976"/>
+    </person>
+    <person id="ped1640" type="ped_pedestrian" depart="9671.85">
+        <walk edges="1117745639 -1117745638"/>
+    </person>
+    <person id="ped1644" type="ped_pedestrian" depart="9695.44">
+        <walk edges="660944512" busStop="2085669850"/> <!-- Deccan Corner -->
+        <ride busStop="2358247540" intended="pt_bus_283:1.16" depart="10403.00"/> <!-- Vishrambag Wada -->
+        <walk edges="440662347#0 440662347#3 1228269461"/>
+    </person>
+    <person id="ped1669" type="ped_pedestrian" depart="9842.87">
+        <walk edges="-217773604#0 217773604#1" busStop="2864314874"/> <!-- Sadashiv Peth Houd -->
+        <ride busStop="2864314869" intended="pt_bus_81:1.15" depart="10274.00"/> <!-- Phadke Houd -->
+        <walk edges="-855278811 -855240399#4 -855240399#3 -855240399#2 -855240399#1 855240399#0"/>
+    </person>
+    <person id="ped1673" type="ped_pedestrian" depart="9866.46">
+        <walk edges="476915660 -476915660" busStop="2864314839"/> <!-- City Post -->
+        <ride busStop="2864314847" intended="pt_bus_283:0.15" depart="10249.00"/> <!-- Ganpati Chowk -->
+        <walk edges="-1118220785 1162366573" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <ride busStop="2864314869" intended="pt_bus_283:1.16" depart="10762.00"/> <!-- Phadke Houd -->
+        <walk edges="855278811"/>
+    </person>
+    <person id="ped1682" type="ped_pedestrian" depart="9919.54">
+        <walk edges="215804390#0 215804390#3 1298624464 1370840871 1529989260 1370840873#2"/>
+    </person>
+    <person id="ped1688" type="ped_pedestrian" depart="9954.92">
+        <walk edges="-60994804#9 -60994804#7"/>
+    </person>
+    <person id="ped1736" type="ped_pedestrian" depart="10238.00">
+        <walk edges="-1228269461 -440662347#3 -440662347#1 440662347#0" busStop="2864314836"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <walk edges="1162366573 -1162366573 1118220785 -1118220785" busStop="2864314847"/> <!-- Ganpati Chowk -->
+        <ride busStop="2864314827" intended="pt_bus_283:0.16" depart="10919.00"/> <!-- Alka Talkies -->
+        <walk edges="53744474" busStop="2864314826"/> <!-- Alka Talkies -->
+        <walk edges="207872405"/>
+    </person>
+    <person id="ped1784" type="ped_pedestrian" depart="10521.08">
+        <walk edges="-1117041495"/>
+    </person>
+    <person id="ped1796" type="ped_pedestrian" depart="10591.85">
+        <walk edges="-218881267#0 218881267#1 855240399#3 855240399#4 855278811" busStop="-2864314869"/> <!-- Phadke Houd -->
+        <ride busStop="2864314827" intended="pt_bus_94:0.17" depart="11496.00"/> <!-- Alka Talkies -->
+        <walk edges="53744474" busStop="2864314826"/> <!-- Alka Talkies -->
+        <walk edges="53088328"/>
+    </person>
+    <person id="ped1805" type="ped_pedestrian" depart="10644.93">
+        <walk edges="1370840873#2 1529989260 1370840871 206994679#6 206994679#4 206994679#0 206994680#0"/>
+    </person>
+    <person id="ped1820" type="ped_pedestrian" depart="10733.39">
+        <walk edges="-855256855#1" busStop="-2870389530"/> <!-- Appa Balwant Chowk -->
+        <ride busStop="-2870389537" intended="pt_bus_94:0.16" depart="11188.00"/> <!-- Kanyashala -->
+        <walk edges="1162738779 -1162738779" busStop="2864314840"/> <!-- Commonwealth -->
+        <ride busStop="2864314849" intended="pt_bus_283:0.17" depart="11606.00"/> <!-- Gokhale Hall -->
+        <walk edges="217773604#2" busStop="2358247540"/> <!-- Vishrambag Wada -->
+        <walk edges="-440662347#1"/>
+    </person>
+</routes>

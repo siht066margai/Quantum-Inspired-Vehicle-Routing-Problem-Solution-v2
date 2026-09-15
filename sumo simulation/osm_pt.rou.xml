@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-13 12:13:44.754240 by Eclipse SUMO osmWebWizard.py v1_27_1+0000-7717f2379d9
+<configuration>
+    <net-file value="C:\Users\rohit\2026-09-13-12-13-00\osm.net.xml.gz"/>
+    <ptlines-file value="C:\Users\rohit\2026-09-13-12-13-00\osm_ptlines.xml"/>
+    <ptstops-file value="C:\Users\rohit\2026-09-13-12-13-00\osm_stops.add.xml"/>
+    <output-file value="C:\Users\rohit\2026-09-13-12-13-00\osm_pt.rou.xml"/>
+    <stopinfos-file value="C:\Users\rohit\2026-09-13-12-13-00\stopinfos.xml"/>
+    <routes-file value="C:\Users\rohit\2026-09-13-12-13-00\vehroutes.xml"/>
+    <trips-file value="C:\Users\rohit\2026-09-13-12-13-00\trips.trips.xml"/>
+    <end value="10800.0"/>
+    <min-stops value="0"/>
+    <extend-to-fringe value="True"/>
+    <random-begin value="True"/>
+    <seed value="42"/>
+    <ignore-errors value="True"/>
+    <types value="bus,tram,subway,light_rail,train,trolleybus,monorail,minibus,share_taxi,ferry,aerialway"/>
+    <vtype-prefix value="pt_"/>
+    <verbose value="True"/>
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="pt_bus" vClass="bus"/>
+    <vType id="pt_tram" vClass="tram"/>
+    <vType id="pt_train" vClass="rail"/>
+    <vType id="pt_subway" vClass="subway"/>
+    <vType id="pt_light_rail" vClass="rail_urban"/>
+    <vType id="pt_monorail" vClass="rail_urban"/>
+    <vType id="pt_trolleybus" vClass="bus"/>
+    <vType id="pt_minibus" vClass="bus"/>
+    <vType id="pt_share_taxi" vClass="taxi"/>
+    <vType id="pt_aerialway" vClass="cable_car" length="2.5" width="2" personCapacity="4"/>
+    <vType id="pt_ferry" vClass="ship"/>
+    <route id="pt_bus_283:0" edges="282484457 219798482#2 823044830 1118809152#1 61969580#0 1162338927#0 1162338927#2 53099246#0 53099246#7 216506278#2 22975752#0 22975752#1 -673249068 673249069#2 673249069#4 53099246#7 216506278#2 216506278#3 1483831579#0 1483831579#1 1483831579#2 860582396#0 53099404#0 53099404#6 22981414 1162338929#0 1512355094 216506291#0 216506291#2 -1307654854#6 -1307654854#5 -1307654854#4 -1307654854#2 -1307654854#1 -1307654854#0 1092344587#0 -227095252#1 227095263#0 53091983#0 53091983#2 53091983#3 53091983#5 53091983#6 297855412 227095243#0 227095243#1 227095243#2 227095243#3 -216582076#0 -53091973 -282484405 -49830977#2 -49830977#1 -53202811#6 -53202811#4 -53202811#3 -53202811#2 -53202798#3 855235605 1184123611 22841096#2 22841096#3 22841096#6 22841096#7 22841268#0 22841268#2 22841268#3 22841268#5 282484427#0 282484427#1 282484427#2 282484427#4 282484427#5 282484427#6 282484427#7 283124023#0 283124023#3 207872406#0 207872405 207872407 207872408#0 207872397#0 250116182#0 246580198#0 1147910705#0 1147910708#2 1147910708#4 1147910708#6 246580200#0 1043506201#0 1043506201#3 250116179#0 1464087872#0 1043506203#1 1043506203#3 1043506203#4 246580196#0 246580196#2 246580196#3" >
+        <stop busStop="2864314871" duration="20" until="38.0"/> <!-- Pune Station Bus Stand -->
+        <stop busStop="2864314875" duration="20" until="227.0"/> <!-- Sadhu Vaswani Chowk -->
+        <stop busStop="2864314843" duration="20" until="365.0"/> <!-- GPO -->
+        <stop busStop="672220644" duration="20" until="438.0"/> <!-- Collector Kacheri -->
+        <stop busStop="2864314855" duration="20" until="502.0"/> <!-- Zilla Parishad -->
+        <stop busStop="-2259729678" duration="20" until="582.0"/> <!-- KEM Hospital -->
+        <stop busStop="2864314835" duration="20" until="666.0"/> <!-- Apollo Talkies -->
+        <stop busStop="2259729638" duration="20" until="783.0"/> <!-- Sonya Maruti Chowk -->
+        <stop busStop="2864314839" duration="20" until="843.0"/> <!-- City Post -->
+        <stop busStop="2864314847" duration="20" until="913.0"/> <!-- Ganpati Chowk -->
+        <stop busStop="2864314840" duration="20" until="1000.0"/> <!-- Commonwealth -->
+        <stop busStop="2864314849" duration="20" until="1075.0"/> <!-- Gokhale Hall -->
+        <stop busStop="2864314886" duration="20" until="1140.0"/> <!-- Vijay Talkies -->
+        <stop busStop="2864314827" duration="20" until="1190.0"/> <!-- Alka Talkies -->
+        <stop busStop="248156037" duration="20" until="1301.0"/> <!-- Deccan Corner -->
+        <stop busStop="1455235579" duration="20" until="1372.0"/> <!-- Garware Mahavidyalay -->
+        <stop busStop="2864314868" duration="20" until="1459.0"/> <!-- Petrol Pump (Karve Road) -->
+        <stop busStop="1223958268" duration="20" until="1529.0"/> <!-- Nal Stop -->
+        <stop busStop="2868690840" duration="20" until="1603.0"/> <!-- SNDT -->
+    </route>
+    <route id="pt_bus_283:1" edges="823696187#0 823696187#2 282484419#0 1043506202#0 1043506202#2 246580201#0 1043506204 1506511687#2 1506511687#4 250116186#0 1151920241#0 246580203#1 246580203#2 246580203#3 246580203#4 246580203#5 1147910706#0 246580199#2 246580199#4 246580195#1 250116188#0 250116188#2 823071269 311629553#0 53088328 22840906#0 30876504#0 30876504#2 30876504#4 30876504#5 30876504#6 1164045942#0 1164045942#1 1126664102#0 1126664102#1 1126664102#3 227095232#0 227095232#1 282484394#0 282484394#3 159889519#0 159889519#1 159889519#2 159889519#4 53090145#0 53090145#1 53090145#2 121897351#0 60991571#0 60991571#1 60991571#4 60991571#5 60991571#6 53090776#0 53090776#1 53090776#2 53090776#3 53090776#4 53090776#6 53090776#7 53090776#8 53090776#9 49830977#1 49830977#2 282484405 53091973 216582076#0 227095244#0 227095244#1 227095244#2 227095244#3 858784668 227095245#0 227095245#2 227095245#3 227095245#5 227095245#6 227095245#8 1307654854#6 858792297#0 858792297#1 858792297#3 1333175106 1333175105 1118809152#0 1118809152#1 61969580#0 216506287#0 216506287#1 1532769235#0 282484457" >
+        <stop busStop="9603810739" duration="20" until="73.0"/> <!-- SNDT -->
+        <stop busStop="2864314864" duration="20" until="161.0"/> <!-- Nal Stop -->
+        <stop busStop="2864314867" duration="20" until="231.0"/> <!-- Petrol Pump (Karve Road) -->
+        <stop busStop="2085669844" duration="20" until="309.0"/> <!-- Garware Mahavidyalay -->
+        <stop busStop="2085669850" duration="20" until="362.0"/> <!-- Deccan Corner -->
+        <stop busStop="2864314826" duration="20" until="465.0"/> <!-- Alka Talkies -->
+        <stop busStop="2864314837" duration="20" until="525.0"/> <!-- Chitrashala -->
+        <stop busStop="2864314874" duration="20" until="600.0"/> <!-- Sadashiv Peth Houd -->
+        <stop busStop="2358247540" duration="20" until="659.0"/> <!-- Vishrambag Wada -->
+        <stop busStop="2864314836" duration="20" until="721.0"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <stop busStop="2864314842" duration="20" until="788.0"/> <!-- Dakshinmukhi Maruti -->
+        <stop busStop="2864314879" duration="20" until="850.0"/> <!-- Shaniwarwada -->
+        <stop busStop="2864314856" duration="20" until="912.0"/> <!-- Kasba Peth Police Chowki -->
+        <stop busStop="2864314858" duration="20" until="979.0"/> <!-- Lal Mahal -->
+        <stop busStop="2864314869" duration="20" until="1061.0"/> <!-- Phadke Houd -->
+        <stop busStop="633121822" duration="20" until="1155.0"/> <!-- Raste Wada -->
+        <stop busStop="2266620664" duration="20" until="1211.0"/> <!-- 15 August Chowk -->
+        <stop busStop="2864314829" duration="20" until="1277.0"/> <!-- Ambedkar Bhavan -->
+        <stop busStop="2864314878" duration="20" until="1390.0"/> <!-- Sassoon Hospital -->
+        <stop busStop="2864314871" duration="20" until="1460.0"/> <!-- Pune Station Bus Stand -->
+    </route>
+    <route id="pt_bus_81:0" edges="817845817 219798484#0 219798484#2 -63995001#5 -61721200#2 -61721200#1 1532769235#0 282484457 219798482#2 823044830 1118809152#1 61969580#0 1162338927#0 1162338927#2 53099246#0 53099246#7 216506278#2 22975752#0 22975752#1 -673249068 673249069#2 673249069#4 53099246#7 216506278#2 216506278#3 1483831579#0 1483831579#1 1483831579#2 860582396#0 53099404#0 53099404#6 22981414 1162338929#0 1512355094 216506291#0 216506291#2 -1307654854#6 -1307654854#5 -1307654854#4 -1307654854#2 -1307654854#1 -1307654854#0 1092344587#0 -227095252#1 227095263#0 53091983#0 53091983#2 53091983#3 53091983#5 53091983#6 297855412 227095243#0 227095243#1 227095243#2 227095243#3 -216582076#0 -53091973 -282484405 -49830977#2 -49830977#1 -53202811#6 -53202811#4 -53202811#3 -53202811#2 -53202798#3 855235605 1184123611 22841096#2 22841096#3 22841096#6 22841096#7 22841268#0 22841268#2 22841268#3 22841268#5 282484427#0 282484427#1 282484427#2 282484427#4 282484427#5 282484427#6 282484427#7 283124023#0 283124023#3 207872406#0 207872405 207872407 207872408#0 207872397#0 250116182#0 246580198#0 1147910705#0 1147910708#2 1147910708#4 1147910708#6 246580200#0 1043506201#0 1043506201#3 250116179#0 1464087872#0 1043506203#1 1043506203#3 1043506203#4 246580196#0 108095100#0 108095100#2 108095100#3 108095100#4 108095100#5 108095100#6 108095100#7 199252453#1 199252453#2 211087067#1 211087067#2 211087067#4 211087067#5" >
+        <stop busStop="2864314871" duration="20" until="120.0"/> <!-- Pune Station Bus Stand -->
+        <stop busStop="2864314875" duration="20" until="321.0"/> <!-- Sadhu Vaswani Chowk -->
+        <stop busStop="2864314843" duration="20" until="458.0"/> <!-- GPO -->
+        <stop busStop="672220644" duration="20" until="531.0"/> <!-- Collector Kacheri -->
+        <stop busStop="2864314855" duration="20" until="597.0"/> <!-- Zilla Parishad -->
+        <stop busStop="-2259729678" duration="20" until="675.0"/> <!-- KEM Hospital -->
+        <stop busStop="2864314835" duration="20" until="758.0"/> <!-- Apollo Talkies -->
+        <stop busStop="2259729638" duration="20" until="875.0"/> <!-- Sonya Maruti Chowk -->
+        <stop busStop="2864314839" duration="20" until="936.0"/> <!-- City Post -->
+        <stop busStop="2864314847" duration="20" until="1008.0"/> <!-- Ganpati Chowk -->
+        <stop busStop="2864314840" duration="20" until="1087.0"/> <!-- Commonwealth -->
+        <stop busStop="2864314849" duration="20" until="1161.0"/> <!-- Gokhale Hall -->
+        <stop busStop="2864314886" duration="20" until="1227.0"/> <!-- Vijay Talkies -->
+        <stop busStop="2864314827" duration="20" until="1277.0"/> <!-- Alka Talkies -->
+        <stop busStop="248156037" duration="20" until="1376.0"/> <!-- Deccan Corner -->
+        <stop busStop="1455235579" duration="20" until="1434.0"/> <!-- Garware Mahavidyalay -->
+        <stop busStop="2864314868" duration="20" until="1520.0"/> <!-- Petrol Pump (Karve Road) -->
+        <stop busStop="1223958268" duration="20" until="1591.0"/> <!-- Nal Stop -->
+        <stop busStop="4415723151" duration="20" until="1676.0" jump="34.38045571352258"/> <!-- SNDT -->
+        <stop busStop="2864314866" duration="20" until="1767.3804557135227"/> <!-- Paud Phata -->
+        <stop busStop="2088125809" duration="20" until="1827.3804557135227"/> <!-- Jog Hospital -->
+        <stop busStop="2788028603" duration="20" until="1891.3804557135227"/> <!-- More Vidyalaya -->
+        <stop busStop="2864314852" duration="20" until="1951.3804557135227"/> <!-- Ideal Colony -->
+    </route>
+    <route id="pt_bus_81:1" edges="158252408#0 158252408#2 211087079#1 211087079#2 211087079#3 199252454#1 199252454#2 199252454#5 823696187#0 823696187#2 282484419#0 1043506202#0 1043506202#2 246580201#0 1043506204 1506511687#2 1506511687#4 250116186#0 1151920241#0 246580203#1 246580203#2 246580203#3 246580203#4 246580203#5 1147910706#0 246580199#2 246580199#4 246580195#1 250116188#0 250116188#2 823071269 311629553#0 53088328 22840906#0 30876504#0 30876504#2 30876504#4 30876504#5 30876504#6 1164045942#0 1164045942#1 1126664102#0 1126664102#1 1126664102#3 227095232#0 227095232#1 282484394#0 282484394#3 159889519#0 159889519#1 159889519#2 159889519#4 53090145#0 53090145#1 53090145#2 121897351#0 60991571#0 60991571#1 60991571#4 60991571#5 60991571#6 53090776#0 53090776#1 53090776#2 53090776#3 53090776#4 53090776#6 53090776#7 53090776#8 53090776#9 49830977#1 49830977#2 282484405 53091973 216582076#0 227095244#0 227095244#1 227095244#2 227095244#3 858784668 227095245#0 227095245#2 227095245#3 227095245#5 227095245#6 227095245#8 1307654854#6 858792297#0 858792297#1 858792297#3 1333175106 1333175105 1118809152#0 1118809152#1 61969580#0 216506287#0 216506287#1 1532769235#0 282484457" >
+        <stop busStop="2788056298" duration="20" until="74.0"/> <!-- LIC Colony -->
+        <stop busStop="2864314863" duration="20" until="137.0"/> <!-- More Vidyalaya -->
+        <stop busStop="2864314865" duration="20" until="215.0"/> <!-- Paud Phata -->
+        <stop busStop="9603810739" duration="20" until="304.0"/> <!-- SNDT -->
+        <stop busStop="2864314864" duration="20" until="390.0"/> <!-- Nal Stop -->
+        <stop busStop="2864314867" duration="20" until="460.0"/> <!-- Petrol Pump (Karve Road) -->
+        <stop busStop="2085669844" duration="20" until="556.0"/> <!-- Garware Mahavidyalay -->
+        <stop busStop="2085669850" duration="20" until="624.0"/> <!-- Deccan Corner -->
+        <stop busStop="2864314826" duration="20" until="751.0"/> <!-- Alka Talkies -->
+        <stop busStop="2864314837" duration="20" until="811.0"/> <!-- Chitrashala -->
+        <stop busStop="2864314874" duration="20" until="885.0"/> <!-- Sadashiv Peth Houd -->
+        <stop busStop="2358247540" duration="20" until="943.0"/> <!-- Vishrambag Wada -->
+        <stop busStop="2864314836" duration="20" until="1015.0"/> <!-- Appa Balwant Chowk (Hujurpaga) -->
+        <stop busStop="2864314842" duration="20" until="1082.0"/> <!-- Dakshinmukhi Maruti -->
+        <stop busStop="2864314879" duration="20" until="1142.0"/> <!-- Shaniwarwada -->
+        <stop busStop="2864314856" duration="20" until="1206.0"/> <!-- Kasba Peth Police Chowki -->
+        <stop busStop="2864314858" duration="20" until="1271.0"/> <!-- Lal Mahal -->
+        <stop busStop="2864314869" duration="20" until="1357.0"/> <!-- Phadke Houd -->
+        <stop busStop="633121822" duration="20" until="1449.0"/> <!-- Raste Wada -->
+        <stop busStop="2266620664" duration="20" until="1505.0"/> <!-- 15 August Chowk -->
+        <stop busStop="2864314829" duration="20" until="1570.0"/> <!-- Ambedkar Bhavan -->
+        <stop busStop="2864314878" duration="20" until="1691.0"/> <!-- Sassoon Hospital -->
+        <stop busStop="2864314871" duration="20" until="1763.0"/> <!-- Pune Station Bus Stand -->
+    </route>
+    <route id="pt_bus_94:0" edges="282484457 219798482#2 823044830 1118809152#1 61969580#0 1162338927#0 1162338927#2 53099246#0 53099246#7 216506278#2 22975752#0 22975752#1 -673249068 673249069#2 673249069#4 53099246#7 216506278#2 216506278#3 1483831579#0 1483831579#1 1483831579#2 860582396#0 53099404#0 53099404#6 22981414 1162338929#0 1512355094 216506291#0 216506291#2 -1307654854#6 -1307654854#5 -1307654854#4 -1307654854#2 -1307654854#1 -1307654854#0 1092344587#0 -227095252#1 227095263#0 53091983#0 53091983#2 53091983#3 53091983#5 53091983#6 297855412 227095243#0 227095243#1 227095243#2 227095243#3 -216582076#0 -53091973 -282484405 -49830977#2 -49830977#1 -49830977#0 -53090776#8 -53090776#7 -53090776#6 -53090776#4 -53090776#3 -53090776#2 -53090776#1 -53090776#0 22841339#0 22841339#1 22841339#2 -53202838#6 -53202838#4 -248254619#1 -248254619#0 -216582074#2 -216582074#1 -53090697#4 -53090697#3 -53090697#2 -53090697#0 -22841173#2 -22972725#7 -22972725#4 -22972725#3 -22972725#1 238567582#0 -53759047#0 283124023#0 283124023#3 207872406#0 207872405 207872407 207872408#0 207872397#0 250116182#0 246580198#0 1147910705#0 1147910708#2 1147910708#4 1147910708#6 246580200#0 1043506201#0 1043506201#3 250116179#0 1464087872#0 1043506203#1 1043506203#3 1043506203#4 246580196#0 108095100#0 108095100#2 108095100#3 108095100#4 108095100#5 108095100#6 108095100#7 199252453#1 199252453#2 211087067#1 211087067#2 211087067#4 211087067#5" >
+        <stop busStop="2864314871" duration="20" until="39.0"/> <!-- Pune Station Bus Stand -->
+        <stop busStop="2864314875" duration="20" until="243.0"/> <!-- Sadhu Vaswani Chowk -->
+        <stop busStop="2864314843" duration="20" until="380.0"/> <!-- GPO -->
+        <stop busStop="672220644" duration="20" until="454.0"/> <!-- Collector Kacheri -->
+        <stop busStop="2864314855" duration="20" until="518.0"/> <!-- Zilla Parishad -->
+        <stop busStop="-2259729678" duration="20" until="596.0"/> <!-- KEM Hospital -->
+        <stop busStop="2864314835" duration="20" until="682.0"/> <!-- Apollo Talkies -->
+        <stop busStop="-2864314869" duration="20" until="761.0"/> <!-- Phadke Houd -->
+        <stop busStop="-2864314858" duration="20" until="843.0"/> <!-- Lal Mahal -->
+        <stop busStop="2870389546" duration="20" until="899.0"/> <!-- Nana Wada -->
+        <stop busStop="2870389551" duration="20" until="958.0"/> <!-- Vasant Talkies -->
+        <stop busStop="-2870389530" duration="20" until="1053.0"/> <!-- Appa Balwant Chowk -->
+        <stop busStop="-2870389537" duration="20" until="1113.0"/> <!-- Kanyashala -->
+        <stop busStop="-2870389540" duration="20" until="1171.0"/> <!-- Kesariwada -->
+        <stop busStop="-2870389545" duration="20" until="1224.0"/> <!-- Mati Ganapati -->
+        <stop busStop="2864314827" duration="20" until="1311.0"/> <!-- Alka Talkies -->
+        <stop busStop="248156037" duration="20" until="1412.0"/> <!-- Deccan Corner -->
+        <stop busStop="1455235579" duration="20" until="1473.0"/> <!-- Garware Mahavidyalay -->
+        <stop busStop="2864314868" duration="20" until="1544.0"/> <!-- Petrol Pump (Karve Road) -->
+        <stop busStop="1223958268" duration="20" until="1613.0"/> <!-- Nal Stop -->
+        <stop busStop="4415723151" duration="20" until="1728.0" jump="34.38045571352258"/> <!-- SNDT -->
+        <stop busStop="2864314866" duration="20" until="1820.3804557135227"/> <!-- Paud Phata -->
+        <stop busStop="2088125809" duration="20" until="1880.3804557135227"/> <!-- Jog Hospital -->
+        <stop busStop="2788028603" duration="20" until="1943.3804557135227"/> <!-- More Vidyalaya -->
+        <stop busStop="2864314852" duration="20" until="2005.3804557135227"/> <!-- Ideal Colony -->
+    </route>
+    <route id="pt_subway_1:0" edges="586112436#5 -586112436#5 -586112436#3 -586112436#1 -586112436#0 586112436#0 586112436#1 586112436#2 586112436#5 -586112436#5 -586112436#3 -586112436#1 -586112436#0 586112436#0 586112436#1 586112436#2 586112436#5 -586112436#5 -586112436#3 -586112436#1 -586112436#0 586112436#0 586112436#1 586112436#2 586112436#5 -586112436#5 -586112436#3 -586112436#1 -586112436#0 586112436#0" >
+        <stop busStop="12211960138" duration="20" until="72.0"/> <!-- Swargate -->
+        <stop busStop="12211960102" duration="20" until="347.0"/> <!-- महात्मा फुले मंदाई -->
+        <stop busStop="5573156998" duration="20" until="584.0"/> <!-- कसबा पेठ -->
+        <stop busStop="11097510273" duration="20" until="830.0"/> <!-- District Court -->
+        <stop busStop="11097510270" duration="20" until="1126.0"/> <!-- Shivaji Nagar -->
+    </route>
+    <route id="pt_subway_1:1" edges="1195664032#0 1195664032#1 1195664032#2" >
+        <stop busStop="11097510272" duration="20" until="79.0"/> <!-- Shivaji Nagar -->
+        <stop busStop="11097510275" duration="20" until="162.0"/> <!-- District Court -->
+        <stop busStop="12211960112" duration="20" until="236.0"/> <!-- कसबा पेठ -->
+        <stop busStop="12211960101" duration="20" until="316.0"/> <!-- महात्मा फुले मंदाई -->
+        <stop busStop="12211960136" duration="20" until="412.0"/> <!-- Swargate -->
+    </route>
+    <route id="pt_subway_2:0" edges="1532296306#0 1532296306#1 1039564317#1 1039564317#2 1039564317#3" >
+        <stop busStop="11699340656" duration="20" until="42.0"/> <!-- Ramwadi -->
+        <stop busStop="11699340654" duration="20" until="137.0"/> <!-- Kalyani Nagar -->
+        <stop busStop="11699340651" duration="20" until="261.0"/> <!-- Yerwada -->
+        <stop busStop="11699340648" duration="20" until="329.0"/> <!-- Bund Garden -->
+        <stop busStop="11097527711" duration="20" until="412.0"/> <!-- Ruby Hall Clinic -->
+        <stop busStop="11097527713" duration="20" until="479.0"/> <!-- Pune Railway Station -->
+        <stop busStop="11097527716" duration="20" until="549.0"/> <!-- Mangalwar Peth -->
+        <stop busStop="11097527720" duration="20" until="627.0"/> <!-- District Court (Aqua Line) -->
+        <stop busStop="11097527722" duration="20" until="696.0"/> <!-- PMC Bhavan -->
+        <stop busStop="11097527717" duration="20" until="764.0"/> <!-- Chhatrapati Sambhaji Udyan -->
+        <stop busStop="7944584968" duration="20" until="822.0"/> <!-- Deccan Gymkhana -->
+        <stop busStop="9572608811" duration="20" until="895.0"/> <!-- Garware College -->
+        <stop busStop="9572650936" duration="20" until="980.0"/> <!-- SNDT College -->
+        <stop busStop="9572650877" duration="20" until="1055.0"/> <!-- Paud Phata -->
+        <stop busStop="9572650850" duration="20" until="1131.0"/> <!-- Anandnagar -->
+        <stop busStop="9572650829" duration="20" until="1207.0"/> <!-- Vanaz -->
+    </route>
+    <route id="pt_subway_2:1" edges="1039564318#0 1039564318#1 1039564318#2 1039564318#3 1532296308#1 1532296308#2" >
+        <stop busStop="5573167932" duration="20" until="43.0"/> <!-- Vanaz -->
+        <stop busStop="5573167997" duration="20" until="118.0"/> <!-- Anandnagar -->
+        <stop busStop="5573167958" duration="20" until="196.0"/> <!-- Paud Phata -->
+        <stop busStop="5573167970" duration="20" until="272.0"/> <!-- SNDT College -->
+        <stop busStop="5573167974" duration="20" until="355.0"/> <!-- Garware College -->
+        <stop busStop="11097527724" duration="20" until="430.0"/> <!-- Deccan Gymkhana -->
+        <stop busStop="11097527719" duration="20" until="492.0"/> <!-- Chhatrapati Sambhaji Udyan -->
+        <stop busStop="11097527723" duration="20" until="561.0"/> <!-- PMC Bhavan -->
+        <stop busStop="11097527721" duration="20" until="628.0"/> <!-- District Court (Aqua Line) -->
+        <stop busStop="11097527715" duration="20" until="705.0"/> <!-- Mangalwar Peth -->
+        <stop busStop="11097527714" duration="20" until="776.0"/> <!-- Pune Railway Station -->
+        <stop busStop="11097527712" duration="20" until="843.0"/> <!-- Ruby Hall Clinic -->
+        <stop busStop="11699340647" duration="20" until="924.0"/> <!-- Bund Garden -->
+        <stop busStop="11699340650" duration="20" until="993.0"/> <!-- Yerwada -->
+        <stop busStop="11699340653" duration="20" until="1118.0"/> <!-- Kalyani Nagar -->
+    </route>
+    <route id="pt_train_11021:0" edges="52879752 1314727581#0 1314727581#1 22973190#1 1314946614#0 1314946614#1 1316323070 1314946613#0 216122027#0 216122027#1 1486887944#0 1486887944#1 1486887950 216121852#0 216121852#1 216122195" >
+        <stop busStop="2257797462" duration="20" until="200.0"/> <!-- Pune Junction -->
+    </route>
+    <route id="pt_train_12127:0" edges="217725240 1314727581#0 1314727581#1 22973190#1 817667260 -661778986 -1316323069 -52881202#1" >
+        <stop busStop="2270270796" duration="20" until="96.0"/> <!-- Shivajinagar -->
+        <stop busStop="-2257797444" duration="20" until="282.0"/> <!-- Pune Junction -->
+    </route>
+    <route id="pt_train_12128:0" edges="661778983#3 1316323069 661778986 1314727578 817667273 121895453#1 121895453#2 1314727577#1 217725242" >
+        <stop busStop="2257797444" duration="20" until="72.0"/> <!-- Pune Junction -->
+        <stop busStop="2270270792" duration="20" until="258.0"/> <!-- Shivajinagar -->
+    </route>
+    <route id="pt_train_12219:0" edges="52879752 1314727581#0 1314727581#1 22973190#1 1314946614#0 1314946614#1 817667274 661778979#0" >
+        <stop busStop="2257797466" duration="20" until="200.0"/> <!-- Pune Junction -->
+    </route>
+    <route id="pt_train_12220:0" edges="106483611 106483611" >
+        <stop edge="106483611" speed="999" jump="44.028217515314" index="fit"/>
+    </route>
+    <route id="pt_train_12701:0" edges="52879752 1314727581#0 1314727581#1 22973190#1 1314946614#0 1314946614#1 817667274 661778979#0" >
+        <stop busStop="2257797466" duration="20" until="200.0"/> <!-- Pune Junction -->
+    </route>
+    <route id="pt_train_12702:0" edges="216121876#1" >
+        <stop busStop="2257797395" duration="20" until="72.0"/> <!-- Pune Junction -->
+    </route>
+    <route id="pt_train_PSR:0" edges="-1486887945 -1316323070 -1314946614#1 -1314946614#0 -661778995 -22973190#0 1502209173 1314727577#1 217725242" >
+        <stop busStop="-2257797462" duration="20" until="97.0"/> <!-- Pune Junction -->
+        <stop busStop="2270270792" duration="20" until="283.0"/> <!-- Shivajinagar -->
+    </route>
+    <route id="pt_train_PSR:1" edges="217725240 1314727581#0 1314727581#1 22973190#1 1314946614#0 1314946614#1 1316323070 1314946613#0" >
+        <stop busStop="2270270796" duration="20" until="96.0"/> <!-- Shivajinagar -->
+        <stop busStop="2257797462" duration="20" until="282.0"/> <!-- Pune Junction -->
+    </route>
+    <flow id="pt_train_12702:0" type="pt_train" route="pt_train_12702:0" begin="15.0" end="10815.0" period="600" line="12702:0" >
+        <param key="name" value="Train SuperFast Express 12702: Hyderabad → Mumbai CSMT"/>
+        <param key="completeness" value="0.06"/>
+    </flow>
+    <flow id="pt_train_11021:0" type="pt_train" route="pt_train_11021:0" begin="637.0" end="11437.0" period="600" line="11021:0" >
+        <param key="name" value="Train 11021 Chalukya Express: Dadar → Tirunelveli"/>
+        <param key="completeness" value="0.25"/>
+    </flow>
+    <flow id="pt_train_PSR:0" type="pt_train" route="pt_train_PSR:0" begin="902.0" end="11702.0" period="600" line="PSR:0" >
+        <param key="name" value="Pune Suburban Railway: Pune → Lonavala"/>
+        <param key="completeness" value="0.12"/>
+    </flow>
+    <flow id="pt_train_PSR:1" type="pt_train" route="pt_train_PSR:1" begin="1128.0" end="11928.0" period="600" line="PSR:1" >
+        <param key="name" value="Pune Suburban Railway: Lonavala → Pune"/>
+        <param key="completeness" value="0.12"/>
+    </flow>
+    <flow id="pt_bus_81:0" type="pt_bus" route="pt_bus_81:0" begin="383.0" end="11183.0" period="600" line="81:0" >
+        <param key="name" value="Bus 81 : Pune Station =&gt; Kumbare Park"/>
+        <param key="completeness" value="0.55"/>
+    </flow>
+    <flow id="pt_bus_81:1" type="pt_bus" route="pt_bus_81:1" begin="389.0" end="11189.0" period="600" line="81:1" >
+        <param key="name" value="Bus 81: Kumbare Park =&gt; Pune Station"/>
+        <param key="completeness" value="0.53"/>
+    </flow>
+    <flow id="pt_bus_283:0" type="pt_bus" route="pt_bus_283:0" begin="406.0" end="11206.0" period="600" line="283:0" >
+        <param key="name" value="Bus 283 : Pune Station =&gt; Kumbare Park"/>
+        <param key="completeness" value="0.58"/>
+    </flow>
+    <flow id="pt_bus_283:1" type="pt_bus" route="pt_bus_283:1" begin="441.0" end="11241.0" period="600" line="283:1" >
+        <param key="name" value="Bus 283: Kumbare Park =&gt; Pune Station"/>
+        <param key="completeness" value="0.48"/>
+    </flow>
+    <flow id="pt_bus_94:0" type="pt_bus" route="pt_bus_94:0" begin="535.0" end="11335.0" period="600" line="94:0" >
+        <param key="name" value="Bus 94 : Pune Station =&gt; Kothrud Depot"/>
+        <param key="completeness" value="0.60"/>
+    </flow>
+    <flow id="pt_train_12701:0" type="pt_train" route="pt_train_12701:0" begin="15.0" end="10815.0" period="600" line="12701:0" >
+        <param key="name" value="Train SuperFast Express 12701: Mumbai CSMT → Hyderabad"/>
+        <param key="completeness" value="0.06"/>
+    </flow>
+    <flow id="pt_subway_2:0" type="pt_subway" route="pt_subway_2:0" begin="17.0" end="10817.0" period="600" line="2:0" >
+        <param key="name" value="Aqua Line: Ramwadi =&gt; Vanaz"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="pt_subway_2:1" type="pt_subway" route="pt_subway_2:1" begin="52.0" end="10852.0" period="600" line="2:1" >
+        <param key="name" value="Aqua Line: Vanaz =&gt; Ramwadi"/>
+        <param key="completeness" value="0.94"/>
+    </flow>
+    <flow id="pt_subway_1:0" type="pt_subway" route="pt_subway_1:0" begin="119.0" end="10919.0" period="600" line="1:0" >
+        <param key="name" value="Purple Line: Swargate → PCMC Bhavan"/>
+        <param key="completeness" value="0.38"/>
+    </flow>
+    <flow id="pt_subway_1:1" type="pt_subway" route="pt_subway_1:1" begin="131.0" end="10931.0" period="600" line="1:1" >
+        <param key="name" value="Purple Line: PCMC Bhavan → Swargate"/>
+        <param key="completeness" value="0.38"/>
+    </flow>
+    <flow id="pt_train_12128:0" type="pt_train" route="pt_train_12128:0" begin="132.0" end="10932.0" period="600" line="12128:0" >
+        <param key="name" value="Train SuperFast Express 12128: Pune → Mumbai CSMT"/>
+        <param key="completeness" value="0.33"/>
+    </flow>
+    <flow id="pt_train_12127:0" type="pt_train" route="pt_train_12127:0" begin="264.0" end="11064.0" period="600" line="12127:0" >
+        <param key="name" value="Train SuperFast Express 12127: Mumbai CSMT → Pune"/>
+        <param key="completeness" value="0.33"/>
+    </flow>
+    <flow id="pt_train_12220:0" type="pt_train" route="pt_train_12220:0" begin="165.0" end="10965.0" period="600" line="12220:0" >
+        <param key="name" value="Train Duronto Express 12220: Secunderabad → Mumbai LTT"/>
+        <param key="completeness" value="0.14"/>
+    </flow>
+    <flow id="pt_train_12219:0" type="pt_train" route="pt_train_12219:0" begin="489.0" end="11289.0" period="600" line="12219:0" >
+        <param key="name" value="Train Duronto Express 12219: Mumbai LTT → Secunderabad"/>
+        <param key="completeness" value="0.17"/>
+    </flow>
+</routes>
