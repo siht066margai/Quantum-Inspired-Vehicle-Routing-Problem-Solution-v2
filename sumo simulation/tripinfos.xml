@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2026-09-15T10:03:13.033339+05:30 by Eclipse SUMO GUI 1.27.1
+<!-- generated on 2026-09-15T11:59:44.887942+05:30 by Eclipse SUMO GUI 1.27.1
 <sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -32,7 +32,7 @@
     </report>
 
     <traci_server>
-        <remote-port value="49720"/>
+        <remote-port value="60815"/>
     </traci_server>
 
     <gui_only>
@@ -45,6 +45,4 @@
 -->
 
 <tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
-    <tripinfo id="motorcycle3" depart="5.00" departLane="1531362755#6_0" departPos="2.30" departSpeed="13.89" departDelay="0.96" arrival="48.00" arrivalLane="1207654652#0_0" arrivalPos="118.13" arrivalSpeed="13.43" duration="43.00" routeLength="383.01" waitingTime="10.00" waitingCount="1" stopTime="0.00" timeLoss="16.42" rerouteNo="1" devices="tripinfo_motorcycle3 routing_motorcycle3" vType="motorcycle_motorcycle" speedFactor="1.07" vaporized=""/>
-    <tripinfo id="motorcycle5" depart="7.00" departLane="-436506462#3_0" departPos="2.30" departSpeed="13.83" departDelay="0.27" arrival="61.00" arrivalLane="436506456#1_0" arrivalPos="7.94" arrivalSpeed="12.88" duration="54.00" routeLength="570.03" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="9.63" rerouteNo="1" devices="tripinfo_motorcycle5 routing_motorcycle5" vType="motorcycle_motorcycle" speedFactor="1.00" vaporized=""/>
 </tripinfos>
